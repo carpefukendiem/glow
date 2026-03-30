@@ -13,8 +13,9 @@ type ButtonProps = {
 
 const styles = {
   primary:
-    "bg-[#8B060B] text-white hover:bg-[#C41E26] border-[#8B060B] shadow-md",
-  outline: "bg-transparent text-[#8B060B] border-[#8B060B] hover:bg-[#8B060B]/10",
+    "bg-[var(--crimson)] text-white hover:bg-[var(--crimson-hover)] border-[var(--crimson)] shadow-md transition-all duration-200 hover:scale-[1.03] hover:shadow-[0_0_24px_var(--crimson-glow)] active:scale-[0.98]",
+  outline:
+    "bg-transparent text-[var(--crimson)] border-[var(--crimson)] hover:bg-[var(--crimson)]/10 transition-all duration-200 active:scale-[0.98]",
 };
 
 export function Button({

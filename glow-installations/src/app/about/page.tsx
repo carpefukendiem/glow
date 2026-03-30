@@ -76,7 +76,9 @@ export default function AboutPage() {
                         alt={`${name} at Glow Installations`}
                         fill
                         className="object-cover"
+                        style={{ objectPosition: "center 20%" }}
                         sizes="(max-width: 768px) 100vw, 33vw"
+                        quality={85}
                       />
                     ) : (
                       <div className="flex h-full items-center justify-center bg-[var(--deep-navy)]">

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { SiteLogo } from "@/components/layout/SiteLogo";
 import { SERVICES } from "@/lib/content";
 
 export function MobileNav() {
@@ -20,7 +21,7 @@ export function MobileNav() {
       {open && (
         <div className="fixed inset-0 z-50 bg-[#0a0a0f]/95 p-6 text-white md:hidden">
           <div className="mb-6 flex items-center justify-between">
-            <p className="font-display text-2xl font-semibold">Glow Installations</p>
+            <SiteLogo variant="mobile" />
             <button
               aria-label="Close mobile navigation"
               onClick={() => setOpen(false)}
@@ -32,7 +33,10 @@ export function MobileNav() {
             <Link href="/" onClick={() => setOpen(false)}>
               Home
             </Link>
-            <p className="pt-3 text-sm uppercase tracking-wide text-white/70">
+            <Link href="/gallery" onClick={() => setOpen(false)}>
+              Gallery
+            </Link>
+            <p className="pt-3 text-sm uppercase tracking-wide text-white">
               Services
             </p>
             {SERVICES.map((service) => (
@@ -68,7 +72,7 @@ export function MobileNav() {
             </Link>
             <Link
               href="/quote"
-              className="flex-1 rounded-full bg-[var(--crimson)] p-3 text-center text-white"
+              className="flex-1 rounded-full bg-[var(--gold)] p-3 text-center font-bold text-[var(--crimson)] transition-all hover:scale-[1.02] active:scale-[0.98]"
               onClick={() => setOpen(false)}
             >
               ✨ Get a Quote

@@ -1,12 +1,20 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { ServicePageHero } from "@/components/sections/ServicePageHero";
 import { SERVICES } from "@/lib/content";
+import { SERVICE_PAGE_MEDIA } from "@/lib/service-media";
 import { buildMetadata } from "@/lib/seo";
 
 type Params = { params: Promise<{ slug: string }> };
+
+function sectionImageStyle(src: string): CSSProperties | undefined {
+  if (src.includes("estate-night")) return { objectPosition: "center 40%" };
+  if (src.includes("team-") || src.includes("review-")) return { objectPosition: "center 35%" };
+  return { objectPosition: "center center" };
+}
 
 export async function generateStaticParams() {
   return SERVICES.map((service) => ({ slug: service.slug }));
@@ -37,21 +45,17 @@ export default async function ServicePage({ params }: Params) {
   const service = SERVICES.find((item) => item.slug === slug);
   if (!service) notFound();
 
-  const heroImages: Record<string, string> = {
-    "residential-service": "/images/hero-residential.webp",
-    "commercial-service": "/images/hero-commercial.webp",
-    "single-story-homes": "/images/hero-single-story.webp",
-    "multi-story-homes": "/images/hero-multi-story.webp",
-    estates: "/images/hero-estate-night.webp",
-    ranch: "/images/hero-ranch.webp",
-    restaurants: "/images/hero-restaurant.webp",
+  const media = SERVICE_PAGE_MEDIA[service.slug] ?? {
+    hero: "/images/hero-home-christmas-lights.webp",
+    sections: [
+      "/images/detail-roofline.webp",
+      "/images/detail-tree-wrap.webp",
+      "/images/detail-entryway.webp",
+    ],
   };
 
-  const detailImages = [
-    "/images/detail-roofline.webp",
-    "/images/detail-tree-wrap.webp",
-    "/images/detail-entryway.webp",
-  ];
+  const heroPosition =
+    service.slug === "estates" ? "center 40%" : service.slug === "ranch" ? "center 55%" : "center center";
 
   return (
     <div className="bg-[var(--night)] pb-24 text-white">
@@ -62,11 +66,17 @@ export default async function ServicePage({ params }: Params) {
         path={`/services/${service.slug}`}
       />
       <ServicePageHero
-        title={service.title}
-        tagline={service.menuTitle}
-        image={heroImages[service.slug] || "/images/hero-home-christmas-lights.webp"}
-        price={service.slug === "commercial-service" || service.slug === "restaurants" ? "Starting at $1,500" : "Starting at $1,200"}
+        tagline={service.title}
+        title={service.intro[0] ?? service.description}
+        image={media.hero}
+        price={
+          service.slug === "commercial-service" || service.slug === "restaurants"
+            ? "Starting at $1,500"
+            : "Starting at $1,200"
+        }
         breadcrumbLabel={service.menuTitle}
+        imageObjectPosition={heroPosition}
+        titleItalic={false}
       />
 
       <section className="section-full bg-[var(--deep-navy)]">
@@ -88,24 +98,31 @@ export default async function ServicePage({ params }: Params) {
 
       <section className="section-full bg-[var(--night)]">
         <div className="container space-y-12">
-          {service.intro.slice(0, 3).map((line, index) => (
-            <article key={`${line}-${index}`} className="grid items-center gap-8 lg:grid-cols-2">
-              <div className={index % 2 === 1 ? "order-2 lg:order-1" : ""}>
-                <p className="text-lg leading-relaxed text-white/75">{line}</p>
-              </div>
-              <div className={index % 2 === 1 ? "order-1 lg:order-2" : ""}>
-                <div className="relative h-72 overflow-hidden rounded-3xl border border-white/10">
-                  <Image
-                    src={detailImages[index % detailImages.length]}
-                    alt={`${service.menuTitle} holiday lighting detail`}
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
+          {service.intro.slice(0, 3).map((line, index) => {
+            const imgSrc = media.sections[index % media.sections.length];
+            return (
+              <article key={`${line}-${index}`} className="grid items-center gap-8 lg:grid-cols-2">
+                <div className={index % 2 === 1 ? "order-2 lg:order-1" : ""}>
+                  <p className="text-lg leading-relaxed text-white/80">{line}</p>
                 </div>
-              </div>
-            </article>
-          ))}
+                <div className={index % 2 === 1 ? "order-1 lg:order-2" : ""}>
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-white/10">
+                    <Image
+                      src={imgSrc}
+                      alt={`${service.menuTitle} holiday lighting`}
+                      fill
+                      className="object-cover"
+                      style={sectionImageStyle(imgSrc)}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      quality={80}
+                      placeholder="blur"
+                      blurDataURL="data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoEAAMAAkA4JZQCdAEO/gHOAAD++P///////////////////////wAAAAA="
+                    />
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -117,7 +134,7 @@ export default async function ServicePage({ params }: Params) {
               <Link
                 key={item.slug}
                 href={`/services/${item.slug}`}
-                className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm font-semibold text-white transition hover:border-[var(--gold)]/40"
+                className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-[var(--gold)]/40 hover:shadow-xl"
               >
                 {item.menuTitle}
               </Link>
@@ -126,7 +143,7 @@ export default async function ServicePage({ params }: Params) {
           <div className="mt-8">
             <Link
               href="/quote"
-              className="font-ui inline-flex rounded-full bg-[var(--crimson)] px-5 py-3 font-semibold text-white transition hover:bg-[var(--crimson-light)]"
+              className="font-ui inline-flex rounded-full bg-[var(--crimson)] px-5 py-3 font-semibold text-white transition-all duration-200 hover:scale-[1.03] hover:bg-[var(--crimson-hover)] active:scale-[0.98]"
             >
               Get a Free Quote →
             </Link>

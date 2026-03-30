@@ -7,11 +7,13 @@ export function CommunitySection() {
       <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-16 px-6 md:px-16 lg:flex-row">
         <div className="relative aspect-[4/3] w-full flex-shrink-0 overflow-hidden rounded-3xl shadow-2xl lg:w-[58%]">
           <Image
-            src="/images/community-night-display.webp"
-            alt="Beautiful neighborhood Christmas light display on the Central Coast"
+            src="/images/estate-night-display.webp"
+            alt="Estate and neighborhood Christmas light display on the Central Coast"
             fill
-            className="object-cover object-center"
+            className="object-cover"
+            style={{ objectPosition: "center 40%" }}
             sizes="(max-width: 1024px) 100vw, 58vw"
+            quality={80}
           />
           <div className="pointer-events-none absolute inset-3 rounded-2xl border border-white/20" />
           <div className="absolute bottom-6 left-6 rounded-2xl border border-white/10 bg-[var(--night)]/90 p-4 backdrop-blur-sm">

@@ -1,6 +1,17 @@
 import type { NextConfig } from "next";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: projectRoot,
+  },
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ["framer-motion", "lucide-react", "@radix-ui/react-accordion"],
+  },
   images: {
     formats: ["image/webp"],
     deviceSizes: [375, 640, 750, 828, 1080, 1200, 1920],

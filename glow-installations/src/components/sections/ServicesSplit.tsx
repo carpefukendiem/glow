@@ -11,7 +11,7 @@ const services = [
     body: "Make it yours without all the work. From rooflines to trees, custom designed for your home.",
     price: "Starting at $1,200",
     href: "/services/residential-service",
-    image: "/images/residential-christmas-lights.webp",
+    image: "/images/residential-hero.webp",
   },
   {
     title: "Commercial",
@@ -19,7 +19,7 @@ const services = [
     body: "Welcome guests with a unique holiday experience. Full service for any size business.",
     price: "Starting at $1,500",
     href: "/services/commercial-service",
-    image: "/images/commercial-christmas-lights.webp",
+    image: "/images/commercial-wreath-display.webp",
   },
 ];
 
@@ -35,13 +35,16 @@ export function ServicesSplit() {
           whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: index * 0.12 }}
-          className="group relative flex min-h-[60vw] flex-1 items-end overflow-hidden md:max-h-[80vh]"
+          className="group relative flex min-h-[60vw] flex-1 items-end overflow-hidden transition-all duration-300 hover:-translate-y-0.5 md:max-h-[80vh]"
         >
           <Image
             src={service.image}
             alt={`${service.title} Christmas light installation`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
+            quality={80}
+            placeholder="blur"
+            blurDataURL="data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoEAAMAAkA4JZQCdAEO/gHOAAD++P///////////////////////wAAAAA="
             className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/50 to-transparent" />
@@ -57,7 +60,7 @@ export function ServicesSplit() {
             <h2 className="font-display mb-2 text-4xl italic text-white md:text-5xl">
               {service.tagline}
             </h2>
-            <p className="mb-4 max-w-xs text-base text-white/70 md:text-lg">
+            <p className="mb-4 max-w-xs text-base text-white/80 md:text-lg">
               {service.body}
             </p>
             <div className="flex items-center justify-between">

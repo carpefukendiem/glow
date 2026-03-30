@@ -1,13 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --crimson: #8b060b;
+  /* Primary — crimson (brand) */
+  --crimson: #8b060a;
+  --crimson-hover: #a50810;
+  --crimson-dark: #6b0408;
   --crimson-light: #c41e26;
-  --crimson-glow: rgba(139, 6, 11, 0.25);
-  --gold: #f5c842;
-  --gold-dark: #d4a017;
-  --gold-glow: rgba(245, 200, 66, 0.2);
-  --gold-warm: #e8a020;
+  --crimson-glow: rgba(139, 6, 10, 0.25);
+
+  /* Secondary — warm gold / cream */
+  --gold: #e2caa2;
+  --gold-dark: #c9a97a;
+  --gold-bright: #f5c842;
+  --gold-glow: rgba(226, 202, 162, 0.2);
+
+  --gold-warm: #d4b896;
   --night: #0a0a0f;
   --night-blue: #0d1117;
   --deep-navy: #0f1b2e;
@@ -15,16 +22,16 @@
   --navy-mid: #1e2d42;
   --navy-light: #253350;
   --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.75);
-  --text-muted: rgba(255, 255, 255, 0.5);
+  --text-secondary: rgba(255, 255, 255, 0.78);
+  --text-muted: rgba(255, 255, 255, 0.65);
   --text-dark: #1a1a1a;
   --text-dark-secondary: #4a4a4a;
   --surface-white: #ffffff;
   --surface-warm: #fbf9f6;
   --surface-cream: #f5f0e8;
-  --glow-gold: 0 0 40px rgba(245, 200, 66, 0.3), 0 0 80px rgba(245, 200, 66, 0.1);
-  --glow-crimson: 0 0 40px rgba(139, 6, 11, 0.4);
-  --glow-warm: 0 0 60px rgba(232, 160, 32, 0.2);
+  --glow-gold: 0 0 40px rgba(226, 202, 162, 0.35), 0 0 80px rgba(226, 202, 162, 0.12);
+  --glow-crimson: 0 0 40px rgba(139, 6, 10, 0.4);
+  --glow-warm: 0 0 60px rgba(226, 202, 162, 0.18);
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
   --shadow-card-hover: 0 12px 48px rgba(0, 0, 0, 0.14), 0 4px 12px rgba(0, 0, 0, 0.06);
   --shadow-card-dark: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -89,9 +96,9 @@ h4 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 300px 300px at 20% 30%, rgba(245, 200, 66, 0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 200px 200px at 80% 60%, rgba(139, 6, 11, 0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 400px 400px at 50% 10%, rgba(245, 200, 66, 0.05) 0%, transparent 70%);
+    radial-gradient(ellipse 300px 300px at 20% 30%, rgba(226, 202, 162, 0.1) 0%, transparent 70%),
+    radial-gradient(ellipse 200px 200px at 80% 60%, rgba(139, 6, 10, 0.1) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 400px at 50% 10%, rgba(226, 202, 162, 0.06) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }

@@ -11,12 +11,14 @@ export function HeroSection() {
     <section className="relative flex min-h-screen items-center overflow-hidden">
       <Image
         src="/images/hero-home-christmas-lights.webp"
-        alt="Beautifully lit home with professional Christmas light installation"
+        alt="Professional Christmas light installation on a beautiful home — Central Coast CA"
         fill
         priority
-        quality={90}
+        fetchPriority="high"
+        quality={85}
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-cover"
+        style={{ objectPosition: "center 65%" }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0F]/30 via-[#0A0A0F]/60 to-[#0A0A0F]/90" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0F]/80 via-[#0A0A0F]/35 to-transparent" />
@@ -33,10 +35,10 @@ export function HeroSection() {
               top: `${(i * 23 + 10) % 80}%`,
               background:
                 i % 3 === 0
-                  ? "rgba(245, 200, 66, 0.4)"
+                  ? "rgba(226, 202, 162, 0.35)"
                   : i % 3 === 1
-                    ? "rgba(255, 220, 120, 0.3)"
-                    : "rgba(232, 160, 32, 0.25)",
+                    ? "rgba(255, 235, 200, 0.28)"
+                    : "rgba(201, 169, 122, 0.22)",
               filter: `blur(${4 + (i % 3) * 3}px)`,
               animationDelay: `${(i * 0.4) % 3}s`,
               animationDuration: `${2 + (i % 3)}s`,
@@ -50,11 +52,11 @@ export function HeroSection() {
           <motion.div
             initial={reduced ? false : { opacity: 0, y: 20 }}
             animate={reduced ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="mb-8 inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-4 py-2 backdrop-blur-sm"
           >
             <span className="text-[var(--gold)]">★★★★★</span>
-            <span className="text-sm font-medium text-white/80">
+            <span className="text-sm font-medium text-white">
               5-Star Rated · Licensed &amp; Insured · Central Coast&apos;s #1 Installer
             </span>
           </motion.div>
@@ -62,7 +64,7 @@ export function HeroSection() {
           <motion.h1
             initial={reduced ? false : { opacity: 0, y: 30 }}
             animate={reduced ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="font-display text-5xl leading-[0.95] text-white sm:text-6xl md:text-7xl lg:text-8xl"
           >
             We Install
@@ -75,8 +77,8 @@ export function HeroSection() {
           <motion.p
             initial={reduced ? false : { opacity: 0, y: 20 }}
             animate={reduced ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="mb-10 mt-6 max-w-xl text-xl font-light text-white/75 md:text-2xl"
+            transition={{ duration: 0.6, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-10 mt-6 max-w-xl text-xl font-light text-white/80 md:text-2xl"
           >
             Residential &amp; Commercial Properties — Paso Robles to Ventura
           </motion.p>
@@ -84,18 +86,18 @@ export function HeroSection() {
           <motion.div
             initial={reduced ? false : { opacity: 0, y: 20 }}
             animate={reduced ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="mb-12 flex flex-col gap-4 sm:flex-row"
           >
             <Link
               href="/quote"
-              className="font-ui inline-flex items-center justify-center gap-2 rounded-full bg-[var(--crimson)] px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[var(--crimson-light)] hover:shadow-[0_0_40px_rgba(139,6,11,0.5)]"
+              className="font-ui inline-flex items-center justify-center gap-2 rounded-full bg-[var(--crimson)] px-8 py-4 text-lg font-semibold text-white transition-all duration-200 hover:scale-[1.03] hover:bg-[var(--crimson-hover)] hover:shadow-[0_0_40px_rgba(139,6,10,0.5)] active:scale-[0.98]"
             >
               Get Started →
             </Link>
             <a
               href="tel:+18057202559"
-              className="font-ui inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-8 py-4 text-lg font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-white/60 hover:bg-white/10"
+              className="font-ui inline-flex items-center justify-center gap-2 rounded-full border-2 border-white px-8 py-4 text-lg font-medium text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/10 active:scale-[0.98]"
             >
               📞 (805) 720-2559
             </a>
@@ -104,8 +106,8 @@ export function HeroSection() {
           <motion.div
             initial={reduced ? false : { opacity: 0 }}
             animate={reduced ? undefined : { opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/60"
+            transition={{ duration: 0.6, delay: 0.52, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white"
           >
             {[
               "Free Design Consultation",
@@ -125,10 +127,10 @@ export function HeroSection() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
+          transition={{ delay: 1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2"
         >
-          <span className="text-xs uppercase tracking-widest text-white/40">Scroll</span>
+          <span className="text-xs uppercase tracking-widest text-white/70">Scroll</span>
           <div className="h-12 w-px animate-pulse bg-gradient-to-b from-white/40 to-transparent" />
         </motion.div>
       )}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteLogo } from "@/components/layout/SiteLogo";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content";
 
 export function Footer() {
@@ -15,10 +16,8 @@ export function Footer() {
           </div>
           <div className="grid gap-8 md:grid-cols-4">
             <div>
-              <p className="font-display text-2xl font-semibold text-white">
-                Glow Installations
-              </p>
-              <p className="mt-2 text-white/70">Decorations that make you shine.</p>
+              <SiteLogo variant="footer" />
+              <p className="mt-3 text-white/80">Decorations that make you shine.</p>
               <p className="mt-4 text-sm text-[var(--gold)]">{BUSINESS.phonePrimary}</p>
             </div>
             <div>
@@ -28,6 +27,8 @@ export function Footer() {
                 <li><Link href="/services/commercial-service">Commercial</Link></li>
                 <li><Link href="/services/estates">Estates</Link></li>
                 <li><Link href="/services/restaurants">Restaurants</Link></li>
+                <li><Link href="/services/santa-barbara-christmas-lights">Santa Barbara</Link></li>
+                <li><Link href="/services/san-luis-obispo-christmas-lights">San Luis Obispo</Link></li>
               </ul>
             </div>
             <div>

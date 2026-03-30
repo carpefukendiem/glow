@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, Playfair_Display } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -12,18 +13,23 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  weight: ["400", "500", "600", "700", "900"],
 });
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -46,11 +52,18 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${playfair.variable} ${montserrat.variable} h-full antialiased`}
     >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      </head>
       <body className="min-h-full flex flex-col bg-[var(--night)]">
+        <NextTopLoader
+          color="#E2CAA2"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl
+          showSpinner={false}
+          easing="ease"
+          speed={200}
+          shadow="0 0 10px #E2CAA2, 0 0 5px #E2CAA2"
+        />
         <SchemaMarkup />
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
@@ -72,13 +85,13 @@ gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`}
         <div className="fixed inset-x-4 bottom-4 z-30 flex gap-3 rounded-2xl border border-white/15 bg-[rgba(12,18,30,0.82)] p-3 backdrop-blur-xl md:hidden">
           <Link
             href="tel:+18057202559"
-            className="flex-1 rounded-full border border-white/30 px-3 py-2 text-center text-sm font-semibold text-white"
+            className="flex-1 rounded-full border border-white px-3 py-2 text-center text-sm font-semibold text-white transition-all hover:bg-white/10 active:scale-[0.98]"
           >
             📞 Call Now
           </Link>
           <Link
             href="/quote"
-            className="flex-1 rounded-full bg-[var(--crimson)] px-3 py-2 text-center text-sm font-semibold text-white"
+            className="flex-1 rounded-full bg-[var(--gold)] px-3 py-2 text-center text-sm font-bold text-[var(--crimson)] transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
             ✨ Get a Quote
           </Link>

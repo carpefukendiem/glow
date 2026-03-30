@@ -42,7 +42,7 @@ export function QuoteForm() {
 
   return (
     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 rounded-2xl border bg-white p-6">
-      <p className="rounded-lg bg-[#F8F6F3] p-3 text-sm text-[#8B060B]">{SEASONAL_NOTICE}</p>
+      <p className="rounded-lg bg-[#F8F6F3] p-3 text-sm text-[var(--crimson)]">{SEASONAL_NOTICE}</p>
       <input type="text" {...form.register("_gotcha")} className="hidden" tabIndex={-1} autoComplete="off" />
       <select {...form.register("serviceType")} className="w-full rounded-lg border p-3">
         <option value="">Type of Service*</option>

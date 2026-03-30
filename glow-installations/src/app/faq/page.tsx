@@ -1,10 +1,15 @@
-import * as Accordion from "@radix-ui/react-accordion";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
 import { FaqQuestionForm } from "@/components/forms/FaqQuestionForm";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { FAQS } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
+
+const FaqAccordion = dynamic(() => import("@/components/faq/FaqAccordion"), {
+  loading: () => (
+    <div className="h-64 animate-pulse rounded-xl bg-white/5" aria-hidden role="presentation" />
+  ),
+});
 
 export const metadata = buildMetadata({
   title: "Christmas Light Installation FAQ | Pricing & Services",
@@ -22,7 +27,7 @@ export default function FaqPage() {
           src="/images/faq-hero.webp"
           alt="Holiday lights frequently asked questions banner"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
           sizes="100vw"
         />
@@ -44,7 +49,7 @@ export default function FaqPage() {
             <p className="mt-2 font-ui text-sm uppercase tracking-wider text-[var(--gold)]">
               Starting at $1,200 / 150 ft
             </p>
-            <div className="mt-4 space-y-2 text-sm text-white/75">
+            <div className="mt-4 space-y-2 text-sm text-white/80">
               <p>✓ Install ✓ Maintenance ✓ Removal ✓ Storage</p>
               <p>✓ Automatic Adjustable Timer</p>
               <p>✓ C9 LED Bulbs Custom Cut to Fit</p>
@@ -52,14 +57,14 @@ export default function FaqPage() {
             </div>
           </article>
           <article className="relative rounded-2xl border border-[var(--gold)]/40 bg-white/8 p-6 backdrop-blur-sm shadow-[var(--glow-gold)]">
-            <span className="font-ui absolute right-4 top-4 rounded-full bg-[var(--gold)] px-3 py-1 text-xs font-bold uppercase tracking-wider text-black">
+            <span className="font-ui absolute right-4 top-4 rounded-full bg-[var(--gold)] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[var(--crimson)]">
               Most Popular
             </span>
             <h2 className="font-display text-2xl text-white">Commercial</h2>
             <p className="mt-2 font-ui text-sm uppercase tracking-wider text-[var(--gold)]">
               Starting at $1,500 / 150 ft
             </p>
-            <div className="mt-4 space-y-2 text-sm text-white/75">
+            <div className="mt-4 space-y-2 text-sm text-white/80">
               <p>✓ Everything in Residential, plus</p>
               <p>✓ Custom designed for business traffic goals</p>
               <p>✓ Upgraded colors and fixtures included</p>
@@ -70,25 +75,7 @@ export default function FaqPage() {
 
       <section className="section-full bg-[var(--night)]">
         <div className="container">
-          <Accordion.Root type="single" collapsible className="space-y-3">
-            {FAQS.map((faq, index) => (
-              <Accordion.Item
-                key={faq.question}
-                value={`faq-${index}`}
-                className="rounded-xl border border-white/10 bg-[var(--navy)] transition-all data-[state=open]:border-[var(--gold)]/35"
-              >
-                <Accordion.Header>
-                  <Accordion.Trigger className="flex w-full items-center justify-between p-4 text-left font-semibold text-white">
-                    {faq.question}
-                    <ChevronDown className="h-4 w-4 text-[var(--gold)] transition-transform data-[state=open]:rotate-180" />
-                  </Accordion.Trigger>
-                </Accordion.Header>
-                <Accordion.Content className="px-4 pb-4 text-sm text-white/75">
-                  {faq.answer}
-                </Accordion.Content>
-              </Accordion.Item>
-            ))}
-          </Accordion.Root>
+          <FaqAccordion items={FAQS} />
 
           <div className="mt-10">
             <FaqQuestionForm />
