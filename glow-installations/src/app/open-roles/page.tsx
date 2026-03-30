@@ -1,0 +1,63 @@
+import Link from "next/link";
+import Image from "next/image";
+import { ROLES } from "@/lib/content";
+import { buildMetadata } from "@/lib/seo";
+import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
+
+export const metadata = buildMetadata({
+  title: "Join the Glow Team | Holiday Lighting Jobs Central Coast",
+  description:
+    "Glow LLC is hiring seasonal and year-round positions on California's Central Coast. Installer, sales, design & more. Apply today!",
+  path: "/open-roles",
+});
+
+export default function OpenRolesPage() {
+  return (
+    <div className="bg-[var(--night)] pb-24 text-white">
+      <SchemaMarkup pageType="jobs" title="Open Roles" path="/open-roles" />
+      <section className="relative h-[50vh] min-h-[340px] overflow-hidden">
+        <Image
+          src="/images/about-hero.webp"
+          alt="Join the Glow team"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/65 to-transparent" />
+        <div className="relative z-10 mx-auto flex h-full max-w-[1280px] items-end px-6 pb-12 md:px-16">
+          <div>
+            <span className="eyebrow">Careers</span>
+            <h1 className="font-display mt-4 text-5xl text-white md:text-6xl">
+              Join the Glow Team
+            </h1>
+            <p className="mt-3 text-white/75">
+              Light up the Central Coast with us.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-full bg-[var(--deep-navy)]">
+        <div className="container">
+          <h2 className="font-display mb-6 text-4xl text-white">Open Roles</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {ROLES.map((role) => (
+              <Link
+                key={role.slug}
+                href={`/open-roles/${role.slug}`}
+                className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-[var(--gold)]/35 hover:bg-white/[0.08]"
+              >
+                <h3 className="font-display text-2xl text-white">{role.title}</h3>
+                <p className="mt-2 text-sm text-white/70">{role.description}</p>
+                <p className="font-ui mt-4 text-xs uppercase tracking-wide text-[var(--gold)]">
+                  View role →
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
