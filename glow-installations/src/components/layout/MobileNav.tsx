@@ -26,65 +26,48 @@ export function MobileNav() {
             className="absolute inset-0 bg-black/55 backdrop-blur-sm"
             onClick={() => setOpen(false)}
           />
-          <div className="relative z-10 flex h-full max-h-[100dvh] flex-col overflow-y-auto bg-[#0a0a0f]/96 p-6 pb-28 text-white shadow-2xl backdrop-blur-md">
-            <div className="mb-6 flex items-center justify-between">
-            <SiteLogo variant="mobile" />
-            <button
-              aria-label="Close mobile navigation"
-              onClick={() => setOpen(false)}
-            >
-              <X />
-            </button>
-            </div>
-            <nav className="space-y-4">
-            <Link href="/" onClick={() => setOpen(false)}>
-              Home
-            </Link>
-            <Link href="/gallery" onClick={() => setOpen(false)}>
-              Gallery
-            </Link>
-            <p className="pt-3 text-sm uppercase tracking-wide text-white">
-              Services
-            </p>
-            {SERVICES.map((service) => (
-              <Link
-                key={service.slug}
-                className="block"
-                href={`/services/${service.slug}`}
+          <div className="relative z-10 flex h-full max-h-[100dvh] min-h-0 flex-col bg-[#0a0a0f]/96 text-white shadow-2xl backdrop-blur-md">
+            <div className="flex shrink-0 items-center justify-between p-6 pb-4">
+              <SiteLogo variant="mobile" />
+              <button
+                type="button"
+                aria-label="Close mobile navigation"
                 onClick={() => setOpen(false)}
               >
-                {service.menuTitle}
-              </Link>
-            ))}
-            <Link href="/faq" onClick={() => setOpen(false)}>
-              FAQ
-            </Link>
-            <Link href="/about" onClick={() => setOpen(false)}>
-              About
-            </Link>
-            <Link href="/contact" onClick={() => setOpen(false)}>
-              Contact
-            </Link>
-            <Link href="/blog" onClick={() => setOpen(false)}>
-              Blog
-            </Link>
-            </nav>
-            <div className="fixed inset-x-4 bottom-4 z-[60] flex gap-3 rounded-2xl border border-white/15 bg-[rgba(52,67,54,0.88)] p-3 text-sm font-semibold text-white backdrop-blur-xl">
-            <Link
-              href="tel:+18057202559"
-              className="flex-1 rounded-full border border-white/30 p-3 text-center"
-              onClick={() => setOpen(false)}
-            >
-              📞 Call Now
-            </Link>
-            <Link
-              href="/quote"
-              className="flex-1 rounded-full bg-[var(--gold)] p-3 text-center font-bold text-[var(--crimson)] transition-all hover:scale-[1.02] active:scale-[0.98]"
-              onClick={() => setOpen(false)}
-            >
-              ✨ Get A Free Quote
-            </Link>
+                <X />
+              </button>
             </div>
+            <nav className="min-h-0 flex-1 space-y-4 overflow-y-auto overscroll-contain px-6 pb-6">
+              <Link href="/" onClick={() => setOpen(false)}>
+                Home
+              </Link>
+              <Link href="/gallery" onClick={() => setOpen(false)}>
+                Gallery
+              </Link>
+              <p className="pt-3 text-sm uppercase tracking-wide text-white">Services</p>
+              {SERVICES.map((service) => (
+                <Link
+                  key={service.slug}
+                  className="block"
+                  href={`/services/${service.slug}`}
+                  onClick={() => setOpen(false)}
+                >
+                  {service.menuTitle}
+                </Link>
+              ))}
+              <Link href="/faq" onClick={() => setOpen(false)}>
+                FAQ
+              </Link>
+              <Link href="/about" onClick={() => setOpen(false)}>
+                About
+              </Link>
+              <Link href="/contact" onClick={() => setOpen(false)}>
+                Contact
+              </Link>
+              <Link href="/blog" onClick={() => setOpen(false)}>
+                Blog
+              </Link>
+            </nav>
           </div>
         </div>
       )}
