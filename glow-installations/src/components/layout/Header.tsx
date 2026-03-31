@@ -33,10 +33,13 @@ export function Header() {
 
         <nav className="hidden items-center gap-6 md:flex">
           <div className="group relative">
-            <span className={`${navLink} inline-flex cursor-default items-center gap-1`}>
-              Services <ChevronDown className="h-4 w-4" />
-            </span>
-            <div className="invisible absolute left-1/2 top-full mt-5 w-[520px] -translate-x-1/2 rounded-2xl border border-white/10 bg-[var(--navy)]/95 p-4 opacity-0 shadow-[var(--shadow-card-dark)] transition group-hover:visible group-hover:opacity-100">
+            <button type="button" className={`${navLink} inline-flex cursor-default items-center gap-1 py-2`}>
+              Services{" "}
+              <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
+            </button>
+            {/* Hover bridge — cursor stays in zone between trigger and panel */}
+            <div className="absolute left-1/2 top-full h-3 w-[min(100vw-2rem,520px)] max-w-[520px] -translate-x-1/2" aria-hidden />
+            <div className="invisible absolute left-1/2 top-[calc(100%+10px)] z-50 w-[min(100vw-2rem,520px)] max-w-[520px] -translate-x-1/2 rounded-2xl border border-white/10 bg-[var(--navy)]/95 p-4 opacity-0 shadow-[var(--shadow-card-dark)] transition-all duration-200 ease-out group-hover:visible group-hover:opacity-100">
               <div className="grid grid-cols-2 gap-2">
                 {SERVICES.map((service) => (
                   <Link
@@ -75,7 +78,7 @@ export function Header() {
             href="/quote"
             className="font-ui inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-5 py-2 text-sm font-bold text-[var(--crimson)] transition-all duration-200 hover:scale-[1.03] hover:bg-white hover:shadow-[0_0_24px_rgba(226,202,162,0.45)] active:scale-[0.98]"
           >
-            Get Started →
+            Get A Free Quote →
           </Link>
         </nav>
 

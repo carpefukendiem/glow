@@ -80,9 +80,9 @@ gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`}
           </>
         )}
         <Header />
-        <main className="flex-1 pt-20 md:pt-24">{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer />
-        <div className="fixed inset-x-4 bottom-4 z-30 flex gap-3 rounded-2xl border border-white/15 bg-[rgba(12,18,30,0.82)] p-3 backdrop-blur-xl md:hidden">
+        <div className="fixed inset-x-4 bottom-4 z-30 flex gap-3 rounded-2xl border border-white/15 bg-[rgba(52,67,54,0.88)] p-3 backdrop-blur-xl md:hidden">
           <Link
             href="tel:+18057202559"
             className="flex-1 rounded-full border border-white px-3 py-2 text-center text-sm font-semibold text-white transition-all hover:bg-white/10 active:scale-[0.98]"
@@ -93,7 +93,7 @@ gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`}
             href="/quote"
             className="flex-1 rounded-full bg-[var(--gold)] px-3 py-2 text-center text-sm font-bold text-[var(--crimson)] transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
-            ✨ Get a Quote
+            ✨ Get A Free Quote
           </Link>
         </div>
       </body>

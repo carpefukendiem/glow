@@ -1,12 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
-import { addToPipeline, createGHLContact, sendSMSNotification, verifyHcaptcha } from "@/lib/ghl";
+import { addGHLOpportunity, createGHLContact, sendLeadSMS, verifyHcaptcha } from "@/lib/ghl";
 import { quoteFormSchema } from "@/lib/validations";
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    if (body._gotcha) {
+      return NextResponse.json({ success: true });
+    }
+
     const captchaOK = await verifyHcaptcha(body.hcaptchaToken);
-    if (!captchaOK || body._gotcha) {
+    if (!captchaOK) {
       return NextResponse.json({ error: "Bot detected" }, { status: 400 });
     }
 
@@ -28,25 +32,38 @@ export async function POST(req: NextRequest) {
         servicesDesired: data.servicesDesired.join(", "),
         specialNotes: data.specialNotes || "",
       },
-      tags: ["website-lead"],
-      source: "Quote Form",
+      tags: ["website-lead", "quote-request"],
+      source: "Website Quote Form",
     });
 
     const contactId = contact?.contact?.id;
-    if (contactId) {
-      await addToPipeline(contactId, {
-        name: `${data.firstName} ${data.lastName}`,
-        serviceType: data.serviceType,
-        estimatedBudget: data.estimatedBudget,
-      });
+    if (!contactId) {
+      throw new Error("No contact ID returned from GHL");
     }
 
-    await sendSMSNotification(
-      `🎄 NEW LEAD\nName: ${data.firstName} ${data.lastName}\nPhone: ${data.phone}\nEmail: ${data.email}`,
+    await addGHLOpportunity(contactId, {
+      name: `${data.firstName} ${data.lastName} — ${data.serviceType}`,
+      source: "Website Quote Form",
+    });
+
+    await sendLeadSMS(
+      `🎄 NEW QUOTE — Glow Installations\n` +
+        `Name: ${data.firstName} ${data.lastName}\n` +
+        `Phone: ${data.phone}\n` +
+        `Email: ${data.email}\n` +
+        `Address: ${data.address1}\n` +
+        `Service: ${data.serviceType}\n` +
+        `Budget: ${data.estimatedBudget}\n` +
+        `Services: ${data.servicesDesired.join(", ")}\n` +
+        `Notes: ${data.specialNotes || "None"}`,
     );
 
     return NextResponse.json({ success: true });
-  } catch {
-    return NextResponse.json({ error: "Unexpected error" }, { status: 500 });
+  } catch (err) {
+    console.error("Quote form error:", err);
+    return NextResponse.json(
+      { error: "Something went wrong. Please call us at (805) 720-2559." },
+      { status: 500 },
+    );
   }
 }

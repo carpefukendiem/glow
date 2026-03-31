@@ -77,9 +77,10 @@ export default function FaqPage() {
         <div className="container">
           <FaqAccordion items={FAQS} />
 
-          <div className="mt-10">
+          <section className="mt-12 rounded-2xl border border-white/10 bg-[#1a2820] p-8">
+            <h2 className="font-display mb-6 text-2xl font-bold text-white">Have Another Question?</h2>
             <FaqQuestionForm />
-          </div>
+          </section>
         </div>
       </section>
     </div>

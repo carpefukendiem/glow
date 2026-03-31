@@ -1,14 +1,28 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { TestimonialsCarousel } from "@/components/sections/TestimonialsCarousel";
 import { ServiceAreaBanner } from "@/components/sections/ServiceAreaBanner";
-import { ServicesSplit } from "@/components/sections/ServicesSplit";
-import { FeaturesSection } from "@/components/sections/FeaturesSection";
-import { PhotoStrip } from "@/components/sections/PhotoStrip";
-import { CommunitySection } from "@/components/sections/CommunitySection";
-import { CtaBanner } from "@/components/sections/CtaBanner";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { buildMetadata } from "@/lib/seo";
+
+const ServicesSplit = dynamic(() =>
+  import("@/components/sections/ServicesSplit").then((m) => ({ default: m.ServicesSplit })),
+);
+const FeaturesSection = dynamic(() =>
+  import("@/components/sections/FeaturesSection").then((m) => ({ default: m.FeaturesSection })),
+);
+const PhotoStrip = dynamic(() =>
+  import("@/components/sections/PhotoStrip").then((m) => ({ default: m.PhotoStrip })),
+);
+const TestimonialsCarousel = dynamic(() =>
+  import("@/components/sections/TestimonialsCarousel").then((m) => ({ default: m.TestimonialsCarousel })),
+);
+const CommunitySection = dynamic(() =>
+  import("@/components/sections/CommunitySection").then((m) => ({ default: m.CommunitySection })),
+);
+const CtaBanner = dynamic(() =>
+  import("@/components/sections/CtaBanner").then((m) => ({ default: m.CtaBanner })),
+);
 
 export const metadata = buildMetadata({
   title: "Christmas Light Installation | Central Coast CA | Glow",

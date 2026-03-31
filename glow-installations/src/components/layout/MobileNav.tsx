@@ -62,7 +62,7 @@ export function MobileNav() {
               Blog
             </Link>
           </nav>
-          <div className="fixed inset-x-4 bottom-4 flex gap-3 rounded-2xl border border-white/15 bg-[rgba(12,18,30,0.82)] p-3 text-sm font-semibold text-white backdrop-blur-xl">
+          <div className="fixed inset-x-4 bottom-4 flex gap-3 rounded-2xl border border-white/15 bg-[rgba(52,67,54,0.88)] p-3 text-sm font-semibold text-white backdrop-blur-xl">
             <Link
               href="tel:+18057202559"
               className="flex-1 rounded-full border border-white/30 p-3 text-center"
@@ -75,7 +75,7 @@ export function MobileNav() {
               className="flex-1 rounded-full bg-[var(--gold)] p-3 text-center font-bold text-[var(--crimson)] transition-all hover:scale-[1.02] active:scale-[0.98]"
               onClick={() => setOpen(false)}
             >
-              ✨ Get a Quote
+              ✨ Get A Free Quote
             </Link>
           </div>
         </div>

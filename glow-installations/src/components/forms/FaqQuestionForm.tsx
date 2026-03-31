@@ -5,9 +5,11 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { faqQuestionSchema } from "@/lib/validations";
-import { Button } from "@/components/ui/Button";
 
 type FaqValues = z.input<typeof faqQuestionSchema>;
+
+const inputClass =
+  "w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 transition-all duration-200 focus:border-[var(--gold)] focus:outline-none focus:ring-2 focus:ring-[var(--gold)]/20";
 
 export function FaqQuestionForm() {
   const form = useForm<FaqValues>({
@@ -25,23 +27,67 @@ export function FaqQuestionForm() {
   }
 
   return (
-    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 rounded-2xl border bg-white p-6">
-      <h3 className="text-2xl font-semibold">Ask a Question</h3>
+    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
       <input type="text" {...form.register("_gotcha")} className="hidden" tabIndex={-1} autoComplete="off" />
-      <input placeholder="Name*" {...form.register("name")} className="w-full rounded-lg border p-3" />
-      <input placeholder="Email Address*" {...form.register("email")} className="w-full rounded-lg border p-3" />
-      <textarea placeholder="Question 1*" {...form.register("question1")} className="min-h-24 w-full rounded-lg border p-3" />
-      <textarea placeholder="Question 2 (optional)" {...form.register("question2")} className="min-h-20 w-full rounded-lg border p-3" />
-      <textarea placeholder="Question 3 (optional)" {...form.register("question3")} className="min-h-20 w-full rounded-lg border p-3" />
-      <label className="flex items-center gap-2 text-sm">
-        <input type="checkbox" {...form.register("requestContact")} />
-        Please contact me to answer my question(s)
+      <div>
+        <label className="mb-1.5 block text-sm font-medium text-white/80">Name *</label>
+        <input placeholder="Your name" {...form.register("name")} className={inputClass} />
+      </div>
+      <div>
+        <label className="mb-1.5 block text-sm font-medium text-white/80">Email *</label>
+        <input
+          type="email"
+          placeholder="Email address"
+          {...form.register("email")}
+          className={inputClass}
+        />
+      </div>
+      <div>
+        <label className="mb-1.5 block text-sm font-medium text-white/80">Question 1 *</label>
+        <textarea
+          placeholder="Your question"
+          rows={4}
+          {...form.register("question1")}
+          className={`resize-none ${inputClass}`}
+        />
+      </div>
+      <div>
+        <label className="mb-1.5 block text-sm font-medium text-white/80">Question 2 (optional)</label>
+        <textarea
+          rows={3}
+          placeholder="Additional question"
+          {...form.register("question2")}
+          className={`resize-none ${inputClass}`}
+        />
+      </div>
+      <div>
+        <label className="mb-1.5 block text-sm font-medium text-white/80">Question 3 (optional)</label>
+        <textarea
+          rows={3}
+          placeholder="Additional question"
+          {...form.register("question3")}
+          className={`resize-none ${inputClass}`}
+        />
+      </div>
+      <label className="flex cursor-pointer items-center gap-3">
+        <input
+          type="checkbox"
+          {...form.register("requestContact")}
+          className="h-4 w-4 cursor-pointer rounded border-white/30 bg-white/10 accent-[var(--gold)]"
+        />
+        <span className="text-sm text-white/75">Please contact me to answer my question(s)</span>
       </label>
       <HCaptcha
+        theme="dark"
         sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || "10000000-ffff-ffff-ffff-000000000001"}
         onVerify={(token) => form.setValue("hcaptchaToken", token)}
       />
-      <Button type="submit">Submit</Button>
+      <button
+        type="submit"
+        className="font-ui w-full rounded-xl bg-[var(--crimson)] px-6 py-3.5 font-bold text-white transition-all duration-200 hover:scale-[1.01] hover:bg-[var(--crimson-hover)]"
+      >
+        Submit Question
+      </button>
     </form>
   );
 }

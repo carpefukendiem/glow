@@ -39,38 +39,49 @@ export function CommunitySection() {
             the season together. We create magical moments that unite neighborhoods and
             businesses and transform ordinary spaces into winter wonderlands.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/about"
-              className="font-ui inline-flex items-center gap-2 rounded-full bg-[var(--crimson)] px-6 py-3 font-semibold text-white transition-all hover:bg-[var(--crimson-light)]"
-            >
-              Meet the Team →
-            </Link>
-            <div className="flex items-center gap-3">
-              <a
-                href="https://www.facebook.com/glowinstallations"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--text-dark)]/20 transition-colors hover:border-[var(--crimson)]"
+          <div className="mt-8 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+            <div className="flex flex-1 flex-wrap items-center gap-4">
+              <Link
+                href="/about"
+                className="font-ui inline-flex items-center gap-2 rounded-full bg-[var(--crimson)] px-6 py-3 font-semibold text-white transition-all hover:bg-[var(--crimson-light)]"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
-              </a>
-              <a
-                href="https://instagram.com/glowinstallations"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--text-dark)]/20 transition-colors hover:border-[var(--crimson)]"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="2" y="2" width="20" height="20" rx="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
-              </a>
+                Meet the Team →
+              </Link>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.facebook.com/glowinstallations"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--text-dark)]/20 transition-colors hover:border-[var(--crimson)]"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://instagram.com/glowinstallations"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--text-dark)]/20 transition-colors hover:border-[var(--crimson)]"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div className="flex shrink-0 justify-center sm:w-36 md:w-40 lg:w-48">
+              <Image
+                src="/images/outdoor-lighting-installation-service.png"
+                alt="Glow Installations — outdoor lighting installation service elf mascot"
+                width={200}
+                height={280}
+                className="h-auto w-full max-w-[200px] object-contain drop-shadow-lg"
+              />
             </div>
           </div>
         </div>

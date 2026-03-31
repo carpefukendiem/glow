@@ -30,7 +30,7 @@ export function PhotoStrip() {
               alt={photo.alt}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              quality={75}
+              quality={68}
               className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-[var(--crimson)]/0 transition-all duration-500 group-hover:bg-[var(--crimson)]/20" />

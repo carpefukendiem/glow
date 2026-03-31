@@ -12,9 +12,12 @@ const nextConfig: NextConfig = {
     optimizeCss: true,
     optimizePackageImports: ["framer-motion", "lucide-react", "@radix-ui/react-accordion"],
   },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
   images: {
     formats: ["image/webp"],
-    deviceSizes: [375, 640, 750, 828, 1080, 1200, 1920],
+    deviceSizes: [390, 640, 750, 828, 1080, 1200, 1920],
     minimumCacheTTL: 31536000,
   },
   compress: true,

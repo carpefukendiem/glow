@@ -41,8 +41,8 @@ export function ServicesSplit() {
             src={service.image}
             alt={`${service.title} Christmas light installation`}
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={80}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+            quality={72}
             placeholder="blur"
             blurDataURL="data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoEAAMAAkA4JZQCdAEO/gHOAAD++P///////////////////////wAAAAA="
             className="object-cover object-center transition-transform duration-700 group-hover:scale-105"

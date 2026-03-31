@@ -52,7 +52,7 @@ export function CtaBanner() {
             href="/quote"
             className="font-ui inline-flex items-center justify-center gap-2 rounded-full bg-[var(--crimson)] px-10 py-5 text-lg font-bold text-white transition-all duration-200 hover:scale-[1.03] hover:bg-[var(--crimson-hover)] hover:shadow-[0_0_60px_rgba(139,6,10,0.55)] active:scale-[0.98]"
           >
-            Get Started →
+            Get A Free Quote →
           </Link>
           <a
             href="tel:+18057202559"

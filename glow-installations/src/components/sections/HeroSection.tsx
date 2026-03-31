@@ -8,17 +8,17 @@ export function HeroSection() {
   const reduced = useReducedMotion();
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden">
+    <section className="relative flex min-h-[100svh] items-center overflow-hidden">
       <Image
-        src="/images/hero-home-christmas-lights.webp"
-        alt="Professional Christmas light installation on a beautiful home — Central Coast CA"
+        src="/images/holiday-light-installation-experts.webp"
+        alt="Professional holiday light installation on a home — Central Coast CA"
         fill
         priority
         fetchPriority="high"
-        quality={85}
+        quality={82}
         sizes="100vw"
         className="object-cover"
-        style={{ objectPosition: "center 65%" }}
+        style={{ objectPosition: "center 60%" }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0F]/30 via-[#0A0A0F]/60 to-[#0A0A0F]/90" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0F]/80 via-[#0A0A0F]/35 to-transparent" />
@@ -93,7 +93,7 @@ export function HeroSection() {
               href="/quote"
               className="font-ui inline-flex items-center justify-center gap-2 rounded-full bg-[var(--crimson)] px-8 py-4 text-lg font-semibold text-white transition-all duration-200 hover:scale-[1.03] hover:bg-[var(--crimson-hover)] hover:shadow-[0_0_40px_rgba(139,6,10,0.5)] active:scale-[0.98]"
             >
-              Get Started →
+              Get A Free Quote →
             </Link>
             <a
               href="tel:+18057202559"
