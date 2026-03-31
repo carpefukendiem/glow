@@ -48,8 +48,8 @@ export default async function RolePage({ params }: Params) {
       />
       <section className="relative h-[46vh] min-h-[320px] overflow-hidden">
         <Image
-          src="/images/hero-home-christmas-lights.webp"
-          alt={`${role.title} at Glow Installations — holiday lighting careers`}
+          src="/images/meet-the-team-bg.jpg"
+          alt={`${role.title} at Glow Installations — our team in the field`}
           fill
           className="object-cover"
           priority

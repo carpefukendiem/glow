@@ -27,10 +27,10 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative h-[58vh] min-h-[420px] overflow-hidden">
         <Image
-          src="/images/hero-home-christmas-lights.webp"
-          alt="Residential home decorated with warm Christmas lights on the Central Coast"
+          src="/images/meet-the-team-bg.jpg"
+          alt="Glow Installations team on a Central Coast holiday lighting project"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
           sizes="100vw"
         />
