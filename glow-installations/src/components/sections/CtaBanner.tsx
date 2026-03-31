@@ -6,7 +6,7 @@ export function CtaBanner() {
     <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden text-center">
       <Image
         src="/images/cta-banner-night-home.webp"
-        alt="Stunning Christmas light installation on a Central Coast home"
+        alt="Professional christmas light installation on a Central Coast home at night"
         fill
         className="object-cover object-center"
         sizes="100vw"

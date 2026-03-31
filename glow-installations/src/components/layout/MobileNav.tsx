@@ -19,8 +19,15 @@ export function MobileNav() {
         <Menu />
       </button>
       {open && (
-        <div className="fixed inset-0 z-50 bg-[#0a0a0f]/95 p-6 text-white md:hidden">
-          <div className="mb-6 flex items-center justify-between">
+        <div className="fixed inset-0 z-50 flex flex-col md:hidden">
+          <button
+            type="button"
+            aria-label="Close menu"
+            className="absolute inset-0 bg-black/55 backdrop-blur-sm"
+            onClick={() => setOpen(false)}
+          />
+          <div className="relative z-10 flex h-full max-h-[100dvh] flex-col overflow-y-auto bg-[#0a0a0f]/96 p-6 pb-28 text-white shadow-2xl backdrop-blur-md">
+            <div className="mb-6 flex items-center justify-between">
             <SiteLogo variant="mobile" />
             <button
               aria-label="Close mobile navigation"
@@ -28,8 +35,8 @@ export function MobileNav() {
             >
               <X />
             </button>
-          </div>
-          <nav className="space-y-4">
+            </div>
+            <nav className="space-y-4">
             <Link href="/" onClick={() => setOpen(false)}>
               Home
             </Link>
@@ -61,8 +68,8 @@ export function MobileNav() {
             <Link href="/blog" onClick={() => setOpen(false)}>
               Blog
             </Link>
-          </nav>
-          <div className="fixed inset-x-4 bottom-4 flex gap-3 rounded-2xl border border-white/15 bg-[rgba(52,67,54,0.88)] p-3 text-sm font-semibold text-white backdrop-blur-xl">
+            </nav>
+            <div className="fixed inset-x-4 bottom-4 z-[60] flex gap-3 rounded-2xl border border-white/15 bg-[rgba(52,67,54,0.88)] p-3 text-sm font-semibold text-white backdrop-blur-xl">
             <Link
               href="tel:+18057202559"
               className="flex-1 rounded-full border border-white/30 p-3 text-center"
@@ -77,6 +84,7 @@ export function MobileNav() {
             >
               ✨ Get A Free Quote
             </Link>
+            </div>
           </div>
         </div>
       )}

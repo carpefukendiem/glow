@@ -11,12 +11,30 @@ export const metadata = buildMetadata({
 });
 
 const images = [
-  { src: "/images/gallery-sequoia-wreath-large.webp", alt: "Large sequoia wreath holiday display" },
-  { src: "/images/gallery-sequoia-lifestyle.webp", alt: "24-inch sequoia lifestyle LED wreath" },
-  { src: "/images/gallery-fence-wreath.webp", alt: "LED wreath on residential fence" },
-  { src: "/images/gallery-trunk-wrap.webp", alt: "Warm white LED trunk wrap on trees" },
-  { src: "/images/review-project-lisa.webp", alt: "Custom holiday installation — Santa Ynez area" },
-  { src: "/images/review-project-nathalie.webp", alt: "Christmas installation in Old Orcutt" },
+  {
+    src: "/images/gallery-sequoia-wreath-large.webp",
+    alt: "Large sequoia wreath display installation — professional holiday lighting",
+  },
+  {
+    src: "/images/gallery-sequoia-lifestyle.webp",
+    alt: "Sequoia lifestyle LED wreath on a Central Coast home",
+  },
+  {
+    src: "/images/gallery-fence-wreath.webp",
+    alt: "LED wreath on fence line — outdoor holiday lights installation",
+  },
+  {
+    src: "/images/gallery-trunk-wrap.webp",
+    alt: "Warm white LED trunk wrap on landscape trees — outdoor christmas light installation",
+  },
+  {
+    src: "/images/review-project-lisa.webp",
+    alt: "Professional outdoor christmas lights installed by Glow on a Central Coast home",
+  },
+  {
+    src: "/images/review-project-nathalie.webp",
+    alt: "Christmas light installation in Orcutt CA by Glow Installations",
+  },
 ];
 
 export default function GalleryPage() {
@@ -26,7 +44,7 @@ export default function GalleryPage() {
       <section className="relative h-[52vh] min-h-[360px] overflow-hidden">
         <Image
           src="/images/estate-night-display.webp"
-          alt="Glow Installations portfolio — estate holiday lighting"
+          alt="Large estate with professional christmas light installation at night — Central Coast"
           fill
           className="object-cover"
           style={{ objectPosition: "center 40%" }}
@@ -72,13 +90,24 @@ export default function GalleryPage() {
       </section>
 
       <section className="section-full bg-[var(--night)]">
-        <div className="container">
-          <Link
-            href="/quote"
-            className="font-ui inline-flex rounded-full bg-[var(--crimson)] px-5 py-3 font-semibold text-white transition-all duration-200 hover:scale-[1.03] hover:bg-[var(--crimson-hover)] active:scale-[0.98]"
-          >
-            Schedule Your Display →
-          </Link>
+        <div className="container text-center">
+          <p className="mb-4 text-base text-white/60">
+            Like what you see? Every display starts with a free design consultation.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <Link
+              href="/quote"
+              className="font-ui inline-flex items-center gap-2 rounded-full bg-[var(--crimson)] px-6 py-3 font-bold text-white transition-all hover:bg-[var(--crimson-hover)]"
+            >
+              Get A Free Quote →
+            </Link>
+            <Link href="/services/residential-service" className="self-center text-[var(--gold)] hover:underline">
+              Residential Services
+            </Link>
+            <Link href="/services/commercial-service" className="self-center text-[var(--gold)] hover:underline">
+              Commercial Services
+            </Link>
+          </div>
         </div>
       </section>
     </div>

@@ -8,7 +8,7 @@ export function CommunitySection() {
         <div className="relative aspect-[4/3] w-full flex-shrink-0 overflow-hidden rounded-3xl shadow-2xl lg:w-[58%]">
           <Image
             src="/images/estate-night-display.webp"
-            alt="Estate and neighborhood Christmas light display on the Central Coast"
+            alt="Large estate with professional christmas light installation at night — Central Coast"
             fill
             className="object-cover"
             style={{ objectPosition: "center 40%" }}
@@ -34,10 +34,16 @@ export function CommunitySection() {
             like we&apos;re part of something bigger. Being part of our community and
             sharing in what makes the holidays special is why we exist.
           </p>
-          <p className="mb-8 text-base leading-relaxed text-[var(--text-dark-secondary)]">
+          <p className="mb-4 text-base leading-relaxed text-[var(--text-dark-secondary)]">
             Join our vibrant Christmas light-loving community and let&apos;s illuminate
             the season together. We create magical moments that unite neighborhoods and
             businesses and transform ordinary spaces into winter wonderlands.
+          </p>
+          <p className="mb-8 text-base leading-relaxed text-[var(--text-dark-secondary)]">
+            Since our founding, Glow has become one of the most trusted names in professional holiday light
+            installation on the Central Coast. We&apos;ve transformed hundreds of homes and businesses into luminous
+            landmarks that neighbors slow down to admire. When you&apos;re ready to stop being the house without lights,
+            our christmas light installation service is just one call away.
           </p>
           <div className="mt-8 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
             <div className="flex flex-1 flex-wrap items-center gap-4">

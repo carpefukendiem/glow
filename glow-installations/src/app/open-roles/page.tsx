@@ -56,6 +56,16 @@ export default function OpenRolesPage() {
               </Link>
             ))}
           </div>
+          <p className="mt-10 text-center text-sm text-white/60">
+            New to Glow?{" "}
+            <Link href="/about" className="text-[var(--gold)] hover:underline">
+              Learn about our team and mission
+            </Link>
+            . Ready to book holiday lighting for your property?{" "}
+            <Link href="/quote" className="font-semibold text-[var(--gold)] hover:underline">
+              Get a free outdoor lighting quote →
+            </Link>
+          </p>
         </div>
       </section>
     </div>

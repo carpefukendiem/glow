@@ -58,6 +58,28 @@ export default function BlogPage() {
             </article>
           ))}
         </div>
+        <p className="container mt-10 text-center text-sm text-white/60">
+          Ready to skip the ladder this year?{" "}
+          <Link href="/quote" className="font-semibold text-[var(--gold)] hover:underline">
+            Get a free christmas light installation quote
+          </Link>{" "}
+          or browse{" "}
+          <Link href="/services/residential-service" className="text-[var(--gold)] hover:underline">
+            residential
+          </Link>{" "}
+          and{" "}
+          <Link href="/services/commercial-service" className="text-[var(--gold)] hover:underline">
+            commercial services.
+          </Link>{" "}
+          Questions?{" "}
+          <Link href="/faq" className="text-[var(--gold)] hover:underline">
+            See our FAQ.
+          </Link>{" "}
+          <Link href="/post/the-ultimate-guide-to-holiday-light-installation-on-the-central-coast" className="text-[var(--gold)] hover:underline">
+            Read our ultimate guide
+          </Link>{" "}
+          to planning your display.
+        </p>
       </section>
 
       <section className="section-full bg-[var(--night)]">

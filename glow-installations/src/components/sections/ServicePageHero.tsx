@@ -12,6 +12,8 @@ type ServicePageHeroProps = {
   /** Hero is LCP on service pages */
   imagePriority?: boolean;
   imageObjectPosition?: string;
+  /** Descriptive alt for SEO (defaults to tagline). */
+  imageAlt?: string;
 };
 
 export function ServicePageHero({
@@ -23,12 +25,13 @@ export function ServicePageHero({
   titleItalic = true,
   imagePriority = true,
   imageObjectPosition = "center center",
+  imageAlt,
 }: ServicePageHeroProps) {
   return (
     <section className="relative flex h-[70vh] min-h-[500px] items-end overflow-hidden">
       <Image
         src={image}
-        alt={tagline}
+        alt={imageAlt ?? tagline}
         fill
         className="object-cover"
         style={{ objectPosition: imageObjectPosition }}

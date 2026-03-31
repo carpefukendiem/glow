@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "About Glow LLC | Christmas Light Installers Central Coast",
   description:
-    "Meet Alex Nava & Zuar Mendoza — the Central Coast's Christmas light installation experts. Licensed, insured & passionate about spreading holiday joy.",
+    "Meet the Glow Installations team — Central Coast christmas light contractors serving homes & businesses from Paso Robles to Ventura. Licensed, insured, 5-star rated.",
   path: "/about",
 });
 
@@ -25,7 +26,7 @@ export default function AboutPage() {
       <section className="relative h-[58vh] min-h-[420px] overflow-hidden">
         <Image
           src="/images/about-hero.webp"
-          alt="Glow Installations team working on a premium nighttime display"
+          alt="Glow Installations team — Central Coast professional holiday light installation"
           fill
           className="object-cover"
           priority
@@ -43,6 +44,51 @@ export default function AboutPage() {
               and businesses into unforgettable holiday experiences.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="section-full bg-[var(--surface-warm)]">
+        <div className="container max-w-4xl">
+          <h2 className="font-display mb-6 text-3xl text-[var(--text-dark)] md:text-4xl">
+            Central Coast Christmas Light Contractors With Heart
+          </h2>
+          <div className="max-w-none space-y-5 text-lg text-[var(--text-dark-secondary)]">
+            <p>
+              Glow Installations was founded by Alex Nava and Zuar Aaron Mendoza with a simple belief: the holidays
+              should feel magical, not stressful. As Central Coast natives, they saw a gap in the market for
+              professional holiday light installation that combined true craftsmanship with genuine community values —
+              and built Glow to fill it.
+            </p>
+            <p>
+              Since our founding, we&apos;ve grown into one of the most recognized christmas lighting companies on the
+              Central Coast, serving homeowners and businesses from Paso Robles to Ventura. Our team of trained outdoor
+              lighting installers brings the same attention to detail to a modest single-story roofline as they do to a
+              multi-acre estate display.
+            </p>
+            <p>
+              We are fully licensed, insured, and available to provide a Certificate of Insurance (COI) for any
+              installation — a standard of professionalism that many christmas light contractors in the area
+              don&apos;t offer. When you hire Glow, you&apos;re hiring a company that treats your property with respect
+              and stands behind its work.
+            </p>
+          </div>
+          <p className="mt-8 text-sm text-[var(--text-dark-secondary)]">
+            <Link href="/services/residential-service" className="text-[var(--crimson)] hover:underline">
+              See our residential installation services
+            </Link>{" "}
+            or{" "}
+            <Link href="/services/commercial-service" className="text-[var(--crimson)] hover:underline">
+              explore our commercial packages.
+            </Link>{" "}
+            Interested in joining the team?{" "}
+            <Link href="/open-roles" className="text-[var(--crimson)] hover:underline">
+              View open roles.
+            </Link>{" "}
+            Ready to get started?{" "}
+            <Link href="/quote" className="font-semibold text-[var(--crimson)] hover:underline">
+              Request your free outdoor lighting quote.
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -73,7 +119,13 @@ export default function AboutPage() {
                     {photo ? (
                       <Image
                         src={photo}
-                        alt={`${name} at Glow Installations`}
+                        alt={
+                          name.includes("Alex")
+                            ? "Alex Nava, Co-Founder of Glow Installations — Central Coast christmas light contractors"
+                            : name.includes("Zuar")
+                              ? "Zuar Aaron Mendoza, Co-Founder of Glow Installations — holiday lighting company"
+                              : `${name} at Glow Installations`
+                        }
                         fill
                         className="object-cover"
                         style={{ objectPosition: "center 20%" }}

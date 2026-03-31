@@ -4,6 +4,7 @@ import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ErrorReporter } from "@/components/system/ErrorReporter";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { SITE_URL } from "@/lib/content";
 import Link from "next/link";
@@ -80,6 +81,7 @@ gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`}
           </>
         )}
         <Header />
+        <ErrorReporter />
         <main className="flex-1">{children}</main>
         <Footer />
         <div className="fixed inset-x-4 bottom-4 z-30 flex gap-3 rounded-2xl border border-white/15 bg-[rgba(52,67,54,0.88)] p-3 backdrop-blur-xl md:hidden">

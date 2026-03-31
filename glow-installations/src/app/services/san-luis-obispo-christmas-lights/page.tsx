@@ -9,9 +9,9 @@ import { SITE_URL } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "San Luis Obispo Christmas Light Installation | Glow",
+  title: "San Luis Obispo Christmas Light Installation | Glow LLC",
   description:
-    "Professional Christmas light installation in San Luis Obispo County. Serving SLO, Arroyo Grande, Nipomo & Paso Robles. Free quote from Glow LLC.",
+    "Professional christmas light installation in San Luis Obispo County. Serving SLO, Paso Robles, Arroyo Grande & Nipomo. Local installers, free quote from Glow LLC.",
   path: "/services/san-luis-obispo-christmas-lights",
 });
 
@@ -61,13 +61,73 @@ export default function SanLuisObispoServicePage() {
         breadcrumbLabel="San Luis Obispo"
         titleItalic={false}
         imageObjectPosition="center center"
+        imageAlt="Residential christmas lights installation on a single-story home — Central Coast CA"
       />
 
-      <section className="section-full bg-[var(--deep-navy)]">
-        <div className="container mx-auto max-w-[800px] text-center">
-          <p className="text-lg leading-relaxed text-white/80">
-            Glow LLC provides professional Christmas light installation across SLO County — from Paso Robles wine
-            country to the beaches of Arroyo Grande and Nipomo.
+      <section className="px-6 py-16 bg-[var(--surface-warm)]">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="font-display mb-6 text-3xl text-[var(--text-dark)] md:text-4xl">
+            SLO County&apos;s Christmas Lights Installation Company
+          </h2>
+          <div className="max-w-none space-y-5 text-lg text-[var(--text-dark-secondary)]">
+            <p>
+              San Luis Obispo County is home to some of the most beautiful residential and commercial properties on the
+              California coast — and Glow Installations is proud to be the go-to christmas lights san luis obispo area
+              residents and businesses trust for professional holiday lighting. From the wine country estates of Paso
+              Robles to the beach communities near Arroyo Grande and Pismo, we provide full-service outdoor holiday
+              lights installation across all of SLO County.
+            </p>
+            <p>
+              As one of the most established lighting installation companies on the Central Coast, we&apos;ve completed
+              hundreds of installations in the San Luis Obispo area — everything from modest single-story roofline
+              packages for first-time clients to multi-acre ranch installations with hundreds of feet of tree wrapping.
+              No job is too large or too small.
+            </p>
+            <p>
+              Whether you&apos;re looking to install holiday lights near you for the first time or you&apos;ve been a
+              DIY christmas decorator for years and are ready to hand it off to a pro, Glow&apos;s process makes it
+              easy. We visit your property, design a custom display, provide a transparent quote, and handle the entire
+              installation in a single visit. Holiday lights installation near you shouldn&apos;t be complicated — and
+              with Glow, it isn&apos;t.
+            </p>
+          </div>
+          <h3 className="font-display mt-10 mb-4 text-2xl text-[var(--text-dark)]">SLO County Communities We Serve</h3>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+            {[
+              "San Luis Obispo",
+              "Paso Robles",
+              "Arroyo Grande",
+              "Nipomo",
+              "Pismo Beach",
+              "Atascadero",
+              "Templeton",
+              "Grover Beach",
+            ].map((city) => (
+              <div
+                key={city}
+                className="flex items-center gap-2 rounded-xl border border-[var(--text-dark)]/10 bg-[var(--surface-cream)] p-3"
+              >
+                <span className="text-[var(--crimson)]">★</span>
+                <span className="text-sm text-[var(--text-dark-secondary)]">{city}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm text-[var(--text-dark-secondary)]">
+            <Link href="/quote" className="font-semibold text-[var(--crimson)] hover:underline">
+              Request a free San Luis Obispo lighting quote →
+            </Link>{" "}
+            Browse our{" "}
+            <Link href="/services/residential-service" className="text-[var(--crimson)] hover:underline">
+              residential christmas light packages
+            </Link>{" "}
+            and{" "}
+            <Link href="/services/commercial-service" className="text-[var(--crimson)] hover:underline">
+              commercial holiday lighting services.
+            </Link>{" "}
+            Questions?{" "}
+            <Link href="/faq" className="text-[var(--crimson)] hover:underline">
+              See our FAQ.
+            </Link>
           </p>
         </div>
       </section>
@@ -79,7 +139,7 @@ export default function SanLuisObispoServicePage() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10">
             <Image
               src="/images/residential-family.webp"
-              alt="Family home with holiday lights in SLO County"
+              alt="Family home with warm white LED christmas lights — residential installation SLO County"
               fill
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -119,7 +179,7 @@ export default function SanLuisObispoServicePage() {
                 <div className="relative h-40 overflow-hidden">
                   <Image
                     src={review.projectPhoto}
-                    alt={`Project photo — ${review.name}`}
+                    alt={review.imageAlt}
                     fill
                     className="object-cover"
                     style={{ objectPosition: "center 35%" }}

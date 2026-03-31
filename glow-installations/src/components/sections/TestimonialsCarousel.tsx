@@ -31,7 +31,7 @@ export function TestimonialsCarousel() {
               <div className="relative h-48 overflow-hidden">
                 <Image
                   src={review.projectPhoto}
-                  alt={`Christmas light installation by Glow for ${review.name}`}
+                  alt={review.imageAlt}
                   fill
                   sizes="(max-width: 768px) 82vw, (max-width: 1024px) 50vw, 25vw"
                   quality={75}

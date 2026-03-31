@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JobApplicationForm } from "@/components/forms/JobApplicationForm";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
@@ -84,6 +85,19 @@ export default async function RolePage({ params }: Params) {
             <JobApplicationForm role={role.title} />
           </div>
         </div>
+        <p className="mt-10 text-center text-sm text-white/60">
+          <Link href="/about" className="text-[var(--gold)] hover:underline">
+            About Glow Installations
+          </Link>
+          {" · "}
+          <Link href="/open-roles" className="text-[var(--gold)] hover:underline">
+            All open roles
+          </Link>
+          {" · "}
+          <Link href="/quote" className="font-semibold text-[var(--gold)] hover:underline">
+            Get a free lighting quote (customers)
+          </Link>
+        </p>
       </section>
     </div>
   );

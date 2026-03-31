@@ -68,6 +68,13 @@ export function FeaturesSection() {
               With so much going on during the holiday season, we do it all for you so you can focus on
               what matters most.
             </p>
+            <p className="mx-auto mt-4 max-w-2xl text-base text-white/65">
+              Unlike other outdoor lighting installers, we don&apos;t just hang lights and leave. Every Glow
+              installation includes a custom design consultation, professional installation by trained christmas light
+              contractors, ongoing maintenance throughout the season, careful post-season removal, and year-round
+              storage. It&apos;s truly a full-service experience from a holiday light installation company that cares
+              about your home as much as you do.
+            </p>
           </div>
         </FadeUp>
 

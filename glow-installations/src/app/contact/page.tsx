@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { buildMetadata } from "@/lib/seo";
@@ -45,6 +46,28 @@ export default function ContactPage() {
           </section>
           <div className="rounded-2xl border border-white/10 bg-white p-6 text-[var(--text-dark)]">
             <ContactForm />
+          </div>
+        </div>
+        <div className="container mt-12 border-t border-white/10 pt-8 text-center">
+          <p className="mb-4 text-sm text-white/60">
+            Looking for a specific service? We can help you faster if you use the right form:
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <Link href="/quote" className="font-semibold text-[var(--gold)] hover:underline">
+              Get a free outdoor lighting quote →
+            </Link>
+            <span className="text-white/30">|</span>
+            <Link href="/faq" className="text-[var(--gold)] hover:underline">
+              FAQ &amp; Pricing
+            </Link>
+            <span className="text-white/30">|</span>
+            <Link href="/services/residential-service" className="text-[var(--gold)] hover:underline">
+              Residential Services
+            </Link>
+            <span className="text-white/30">|</span>
+            <Link href="/services/commercial-service" className="text-[var(--gold)] hover:underline">
+              Commercial Services
+            </Link>
           </div>
         </div>
       </section>

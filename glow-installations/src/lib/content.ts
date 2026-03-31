@@ -133,7 +133,7 @@ export const SERVICES = [
     title: "Residential Christmas Lighting & Holiday Decor",
     menuTitle: "Residential",
     description:
-      "Professional residential Christmas light installation on the Central Coast. Custom design, install, maintenance, removal & storage from $1,200. Free quote.",
+      "Professional home christmas lights installation on the Central Coast. Custom design, install, maintenance, removal & storage from $1,200. Free quote.",
     intro: [
       "Residential Lighting and Decor",
       "No place like home. Make it yours without all the work.",
@@ -148,7 +148,7 @@ export const SERVICES = [
     title: "Commercial Holiday Lighting & Decor Services",
     menuTitle: "Commercial",
     description:
-      "Elevate your business with professional commercial Christmas light installation. Central Coast CA. Design, install, maintenance & storage from $1,500.",
+      "Commercial holiday lighting installation for Central Coast businesses. Licensed installers, full-service design through removal from $1,500.",
     intro: [
       "Commercial Lighting & Decor",
       "Welcome your customers with a unique holiday experience!",
@@ -162,7 +162,7 @@ export const SERVICES = [
     title: "Single Story Homes Were Made for Making Memories",
     menuTitle: "Single-Story Homes",
     description:
-      "Expert Christmas light installation for single-story homes on the Central Coast. Easy roofline access, custom design, full service from Glow LLC.",
+      "Perfect for single-level homes — roofline, windows, pathways, and lawn lighting installed safely and beautifully.",
     intro: [
       "Welcome the Christmas spirit into your home!",
       "Lighting and decor",
@@ -176,7 +176,7 @@ export const SERVICES = [
     title: "Multi-Story Home Christmas Light Installation",
     menuTitle: "Multi-Story Homes",
     description:
-      "Professional Christmas light installation for multi-story homes on the Central Coast. Our trained team handles rooflines at any height. Free quote from Glow.",
+      "Heights are no problem. Our trained team handles hanging exterior christmas lights on any multi-story home.",
     intro: [
       "Multi-Story Homes",
       "Bring themed lighting to your home",
@@ -191,7 +191,7 @@ export const SERVICES = [
     title: "Grand Estate Holiday Lighting & Decor",
     menuTitle: "Estates",
     description:
-      "Stunning Christmas light installation for estates and large properties on the Central Coast. Custom large-scale displays, full service from Glow LLC.",
+      "Large properties deserve a grand display. Custom christmas light design for estates and luxury homes.",
     intro: [
       "Estates",
       "Welcome to your humble abode, now full of Christmas!",
@@ -204,7 +204,7 @@ export const SERVICES = [
     title: "A Christmas Ranch Like No Other",
     menuTitle: "Ranch",
     description:
-      "Professional Christmas light installation for ranches and rural properties on the Central Coast. Enough lights to illuminate any property. Free quote.",
+      "From fence lines to grove trees — outdoor holiday lights installation built for wide-open ranch properties.",
     intro: [
       "A Christmas Ranch like no Other",
       "Enough lights to light up a grove",
@@ -232,9 +232,9 @@ export const SERVICES = [
 export const BLOG_POSTS = [
   {
     slug: "the-ultimate-guide-to-holiday-light-installation-on-the-central-coast",
-    title: "The Ultimate Guide to Holiday Light Installation",
+    title: "The Ultimate Guide to Holiday Light Installation on the Central Coast",
     description:
-      "Everything you need to know about holiday light installation on California's Central Coast — planning, design basics, tips & more from Glow LLC.",
+      "Everything Central Coast homeowners need to know about professional christmas light installation — from planning your display to choosing the right xmas light installation company.",
     author: "Alex Nava",
     category: "Tips & Guides",
     publishedYear: "2024",
@@ -243,18 +243,18 @@ export const BLOG_POSTS = [
     slug: "why-we-use-leds-and-why-you-should-too",
     title: "Why We Use LEDs — And Why You Should Too",
     description:
-      "Discover why Glow LLC only uses LED Christmas lights — brighter, safer, longer-lasting & more energy-efficient than incandescent. Read the full guide.",
+      "Not all christmas lights are created equal. Learn why pro christmas lights use LED technology, and why every outdoor xmas light installation we do uses commercial-grade LEDs.",
     author: "Alex Nava",
     category: "Lighting Education",
     publishedYear: "2024",
   },
   {
     slug: "why-professional-holiday-lights-are-the-best-investment-for-your-santa-barbara-home",
-    title: "Why Professional Holiday Lights Are Worth Every Penny",
+    title: "Why Professional Holiday Lights Are the Best Investment for Your Santa Barbara Home",
     description:
-      "Thinking about DIY Christmas lights? See why professional installation is the smarter investment for your Santa Barbara or Central Coast home.",
+      "DIY christmas lights cost more than you think. A professional xmas light hanging service delivers better results, safer installation, and less hassle every season.",
     author: "Alex Nava",
-    category: "Homeowner Insights",
+    category: "Santa Barbara",
     publishedYear: "2024",
   },
 ] as const;

@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
 import { FaqQuestionForm } from "@/components/forms/FaqQuestionForm";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { FAQS } from "@/lib/content";
@@ -14,7 +15,7 @@ const FaqAccordion = dynamic(() => import("@/components/faq/FaqAccordion"), {
 export const metadata = buildMetadata({
   title: "Christmas Light Installation FAQ | Pricing & Services",
   description:
-    "Answers about Christmas light installation pricing, what's included, service area, booking & more. Residential from $1,200. Commercial from $1,500.",
+    "Questions about our christmas light service? See pricing, what's included, service areas & booking from the Central Coast's trusted christmas light company.",
   path: "/faq",
 });
 
@@ -25,7 +26,7 @@ export default function FaqPage() {
       <section className="relative h-[52vh] min-h-[360px] overflow-hidden">
         <Image
           src="/images/faq-hero.webp"
-          alt="Holiday lights frequently asked questions banner"
+          alt="Professional exterior christmas lights on a Central Coast home — FAQ"
           fill
           className="object-cover object-center"
           priority
@@ -36,14 +37,22 @@ export default function FaqPage() {
           <div>
             <span className="eyebrow">FAQ</span>
             <h1 className="font-display mt-4 text-5xl text-white md:text-6xl">
-              Frequently Asked Questions
+              Frequently Asked Questions About Our Services
             </h1>
           </div>
         </div>
       </section>
 
       <section className="section-full bg-[var(--deep-navy)]">
-        <div className="container grid gap-4 md:grid-cols-2">
+        <div className="container max-w-3xl text-center">
+          <p className="text-lg text-white/70">
+            We&apos;re one of the most trusted christmas light companies near you on the Central Coast. Here&apos;s
+            everything you need to know about how our christmas light service works — from pricing and scheduling to
+            what&apos;s included in every install. If you&apos;re comparing companies that hang christmas lights in the
+            area, we&apos;re confident our full-service approach stands apart.
+          </p>
+        </div>
+        <div className="container mt-10 grid gap-4 md:grid-cols-2">
           <article className="rounded-2xl border border-white/15 bg-white/8 p-6 backdrop-blur-sm">
             <h2 className="font-display text-2xl text-white">Residential</h2>
             <p className="mt-2 font-ui text-sm uppercase tracking-wider text-[var(--gold)]">
@@ -76,6 +85,30 @@ export default function FaqPage() {
       <section className="section-full bg-[var(--night)]">
         <div className="container">
           <FaqAccordion items={FAQS} />
+
+          <div className="mt-10 border-t border-white/10 py-10 text-center">
+            <p className="mb-4 text-base text-white/70">
+              Still have questions? Our team of pro christmas light installers is happy to walk you through the
+              process.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm">
+              <Link href="/quote" className="font-semibold text-[var(--gold)] hover:underline">
+                Get a free outdoor lighting quote →
+              </Link>
+              <span className="text-white/30">|</span>
+              <Link href="/services/residential-service" className="text-[var(--gold)] hover:underline">
+                Residential services
+              </Link>
+              <span className="text-white/30">|</span>
+              <Link href="/services/commercial-service" className="text-[var(--gold)] hover:underline">
+                Commercial services
+              </Link>
+              <span className="text-white/30">|</span>
+              <Link href="/contact" className="text-[var(--gold)] hover:underline">
+                Contact us
+              </Link>
+            </div>
+          </div>
 
           <section className="mt-12 rounded-2xl border border-white/10 bg-[#1a2820] p-8">
             <h2 className="font-display mb-6 text-2xl font-bold text-white">Have Another Question?</h2>

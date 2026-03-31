@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { formatErrorHtml, sendErrorNotificationEmail } from "@/lib/error-email";
 import { addGHLOpportunity, createGHLContact, sendLeadSMS, verifyHcaptcha } from "@/lib/ghl";
 import { quoteFormSchema } from "@/lib/validations";
 
@@ -61,6 +62,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("Quote form error:", err);
+    await sendErrorNotificationEmail("API submit-quote", formatErrorHtml("submit-quote", err));
     return NextResponse.json(
       { error: "Something went wrong. Please call us at (805) 720-2559." },
       { status: 500 },

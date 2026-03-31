@@ -11,7 +11,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Santa Barbara Christmas Light Installation | Glow LLC",
   description:
-    "Expert Christmas light installation in Santa Barbara & Montecito. Licensed & insured. Residential & commercial. Free quote from Glow LLC.",
+    "Local christmas light installers serving Santa Barbara, Montecito & Summerland. Professional outdoor holiday lighting installation from Glow LLC. Free quote.",
   path: "/services/santa-barbara-christmas-lights",
 });
 
@@ -67,13 +67,76 @@ export default function SantaBarbaraServicePage() {
         breadcrumbLabel="Santa Barbara"
         titleItalic={false}
         imageObjectPosition="center center"
+        imageAlt="Large sequoia wreath display — commercial christmas light installation"
       />
 
-      <section className="section-full bg-[var(--deep-navy)]">
-        <div className="container mx-auto max-w-[800px] text-center">
-          <p className="text-lg leading-relaxed text-white/80">
-            Glow LLC brings professional Christmas light installation to Santa Barbara and Montecito,
-            handling everything from custom design to removal and storage.
+      <section className="px-6 py-16 bg-[var(--surface-warm)]">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="font-display mb-6 text-3xl text-[var(--text-dark)] md:text-4xl">
+            Santa Barbara&apos;s Local Christmas Light Installation Company
+          </h2>
+          <div className="max-w-none space-y-5 text-lg text-[var(--text-dark-secondary)]">
+            <p>
+              Santa Barbara is one of the most beautiful cities in California — and your home deserves a holiday
+              display that lives up to it. Glow Installations provides professional outdoor christmas light installation
+              for Santa Barbara homeowners and businesses, bringing the same full-service experience that has made us
+              the Central Coast&apos;s most trusted christmas lighting company.
+            </p>
+            <p>
+              When you search for christmas light hanging near me in the Santa Barbara area, you want local christmas
+              light installers who know the region, understand the architecture, and will be there if something needs
+              attention mid-season. That&apos;s Glow. Our team services Santa Barbara, Montecito, Summerland, and the
+              surrounding communities — and we&apos;re fully licensed, insured, and COI-ready.
+            </p>
+            <p>
+              Santa Barbara&apos;s Mediterranean architecture — tile roofs, stucco exteriors, arched windows, lush
+              landscaping — creates some of the most stunning backdrops for holiday lighting on the California coast.
+              Our outdoor lighting installers are experienced with these architectural details, using clip systems and
+              attachment methods suited for tile and Spanish-style rooflines.
+            </p>
+            <p>
+              Among the many holiday lighting companies near Santa Barbara, Glow stands out for one simple reason: we
+              handle everything. Design, installation, maintenance, removal, and storage — one company, one point of
+              contact, zero hassle for you.
+            </p>
+          </div>
+          <h3 className="font-display mt-10 mb-4 text-2xl text-[var(--text-dark)]">
+            Santa Barbara Area Communities We Serve
+          </h3>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+            {["Santa Barbara", "Montecito", "Summerland", "Goleta", "Carpinteria", "Hope Ranch"].map((city) => (
+              <div
+                key={city}
+                className="flex items-center gap-2 rounded-xl border border-[var(--text-dark)]/10 bg-[var(--surface-cream)] p-3"
+              >
+                <span className="text-[var(--crimson)]">★</span>
+                <span className="text-sm text-[var(--text-dark-secondary)]">{city}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm text-[var(--text-dark-secondary)]">
+            <Link href="/quote" className="font-semibold text-[var(--crimson)] hover:underline">
+              Request your free Santa Barbara lighting quote →
+            </Link>{" "}
+            Read{" "}
+            <Link
+              href="/post/why-professional-holiday-lights-are-the-best-investment-for-your-santa-barbara-home"
+              className="text-[var(--crimson)] hover:underline"
+            >
+              why professional holiday lights are the best investment for your Santa Barbara home
+            </Link>
+            . Browse{" "}
+            <Link href="/services/residential-service" className="text-[var(--crimson)] hover:underline">
+              residential packages
+            </Link>{" "}
+            and{" "}
+            <Link href="/services/commercial-service" className="text-[var(--crimson)] hover:underline">
+              commercial holiday lighting
+            </Link>
+            . Questions?{" "}
+            <Link href="/faq" className="text-[var(--crimson)] hover:underline">
+              See our FAQ.
+            </Link>
           </p>
         </div>
       </section>
@@ -85,7 +148,7 @@ export default function SantaBarbaraServicePage() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10">
             <Image
               src="/images/estate-night-display.webp"
-              alt="Estate holiday lighting at night"
+              alt="Large estate with professional christmas light installation at night — Central Coast"
               fill
               className="object-cover"
               style={{ objectPosition: "center 40%" }}
@@ -125,7 +188,7 @@ export default function SantaBarbaraServicePage() {
                 <div className="relative h-40 overflow-hidden">
                   <Image
                     src={review.projectPhoto}
-                    alt={`Project photo — ${review.name}`}
+                    alt={review.imageAlt}
                     fill
                     className="object-cover"
                     style={{ objectPosition: "center 35%" }}

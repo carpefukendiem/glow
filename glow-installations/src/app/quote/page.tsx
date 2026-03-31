@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { QuoteForm } from "@/components/forms/QuoteForm";
 import { QuoteReviewsStack } from "@/components/quote/QuoteReviewsStack";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
@@ -6,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Get Your Free Outdoor Lighting Quote | Glow Installations",
   description:
-    "Request a free outdoor lighting and Christmas light installation quote from Glow LLC. Serving Central Coast CA. No commitment required. Custom proposal within 24 hours.",
+    "Professional christmas lights installation near you on the Central Coast. Outdoor christmas lights installation quote in 24 hours — no commitment. Glow LLC.",
   path: "/quote",
 });
 
@@ -33,7 +34,9 @@ export default function QuotePage() {
           Get Your Free Outdoor Lighting Quote
         </h1>
         <p className="mx-auto mt-3 max-w-xl text-lg text-white/70">
-          No commitment required. Custom proposal within 24 hours.
+          Glow Installations is your local professional christmas light installation company near you on the Central
+          Coast. No commitment required — we&apos;ll send a custom outdoor lighting proposal within 24 hours of your
+          inquiry.
         </p>
       </div>
 
@@ -60,6 +63,53 @@ export default function QuotePage() {
             </div>
           </div>
         </div>
+
+        <div className="mx-auto mt-16 max-w-3xl">
+          <h2 className="font-display mb-8 text-center text-2xl text-white">What Happens After You Submit</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {[
+              {
+                step: "01",
+                title: "We Call You",
+                body: "A member of our team calls within 24 hours to confirm details and schedule a free on-site consultation.",
+              },
+              {
+                step: "02",
+                title: "Custom Design",
+                body: "We assess your property, design your display, and provide a transparent written quote — no surprises.",
+              },
+              {
+                step: "03",
+                title: "We Handle Everything",
+                body: "You approve the design; we handle installation, maintenance, removal, and storage. That\u2019s it.",
+              },
+            ].map((s) => (
+              <div
+                key={s.step}
+                className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center"
+              >
+                <span className="mb-2 block font-display text-3xl font-bold text-[var(--gold)]">{s.step}</span>
+                <h3 className="mb-2 text-lg font-semibold text-white">{s.title}</h3>
+                <p className="text-sm text-white/60">{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-white/50">
+          Want to learn more first?{" "}
+          <Link href="/faq" className="text-[var(--gold)] hover:underline">
+            Read our FAQ
+          </Link>{" "}
+          or browse{" "}
+          <Link href="/services/residential-service" className="text-[var(--gold)] hover:underline">
+            residential packages
+          </Link>{" "}
+          and{" "}
+          <Link href="/services/commercial-service" className="text-[var(--gold)] hover:underline">
+            commercial packages.
+          </Link>
+        </p>
       </section>
     </div>
   );

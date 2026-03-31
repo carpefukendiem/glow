@@ -11,7 +11,7 @@ export function HeroSection() {
     <section className="relative flex min-h-[100svh] items-center overflow-hidden">
       <Image
         src="/images/holiday-light-installation-experts.webp"
-        alt="Professional holiday light installation on a home — Central Coast CA"
+        alt="Professional christmas light installation on a Central Coast home at night"
         fill
         priority
         fetchPriority="high"
@@ -78,9 +78,11 @@ export function HeroSection() {
             initial={reduced ? false : { opacity: 0, y: 20 }}
             animate={reduced ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-10 mt-6 max-w-xl text-xl font-light text-white/80 md:text-2xl"
+            className="mb-10 mt-6 max-w-2xl text-xl font-light text-white/80 md:text-2xl"
           >
-            Residential &amp; Commercial Properties — Paso Robles to Ventura
+            The Central Coast&apos;s trusted christmas lighting company serving residential and commercial properties
+            from Paso Robles to Ventura. Professional christmas light installation, design, and full-service care —
+            every season.
           </motion.p>
 
           <motion.div

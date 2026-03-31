@@ -39,7 +39,11 @@ export function ServicesSplit() {
         >
           <Image
             src={service.image}
-            alt={`${service.title} Christmas light installation`}
+            alt={
+              service.title === "Residential"
+                ? "Residential christmas lights installation on a single-story home — Central Coast CA"
+                : "Large sequoia wreath display — commercial christmas light installation"
+            }
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
             quality={72}

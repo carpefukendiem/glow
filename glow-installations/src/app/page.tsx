@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ServiceAreaBanner } from "@/components/sections/ServiceAreaBanner";
+import { ServiceAreaIntro } from "@/components/sections/ServiceAreaIntro";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { buildMetadata } from "@/lib/seo";
 
@@ -27,7 +28,7 @@ const CtaBanner = dynamic(() =>
 export const metadata = buildMetadata({
   title: "Christmas Light Installation | Central Coast CA | Glow",
   description:
-    "Glow LLC installs Christmas lights across California's Central Coast. Custom design, install, maintenance & storage. Request your free quote today!",
+    "Central Coast christmas light installers serving Paso Robles to Ventura. Professional christmas light installation for homes & businesses. Free design consultation from Glow LLC.",
   path: "/",
 });
 
@@ -37,6 +38,7 @@ export default function Home() {
       <SchemaMarkup pageType="faq" title="Home" path="/" />
       <HeroSection />
       <ServiceAreaBanner />
+      <ServiceAreaIntro />
       <ServicesSplit />
       <FeaturesSection />
       <PhotoStrip />
@@ -45,10 +47,32 @@ export default function Home() {
       <CtaBanner />
       <section className="section-full bg-[var(--night)]">
         <div className="container text-center">
-          <p className="text-white/70">
+          <p className="text-sm text-white/65">
+            Whether you need{" "}
+            <Link href="/services/residential-service" className="text-[var(--gold)] hover:underline">
+              residential christmas light installation
+            </Link>{" "}
+            for your home,{" "}
+            <Link href="/services/commercial-service" className="text-[var(--gold)] hover:underline">
+              commercial holiday lighting
+            </Link>{" "}
+            for your business, or want to explore{" "}
+            <Link href="/faq" className="text-[var(--gold)] hover:underline">
+              our pricing and services
+            </Link>{" "}
+            — we&apos;re here to help.{" "}
+            <Link href="/quote" className="font-semibold text-[var(--gold)] hover:underline">
+              Get your free outdoor lighting quote today.
+            </Link>
+          </p>
+          <p className="mt-6 text-white/70">
             Looking for DIY tips?{" "}
             <Link href="/blog" className="font-semibold text-[var(--gold)] hover:text-white">
               Visit the Glow Journal →
+            </Link>
+            {" · "}
+            <Link href="/about" className="font-semibold text-[var(--gold)] hover:text-white">
+              About our team
             </Link>
           </p>
         </div>

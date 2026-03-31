@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { formatErrorHtml, sendErrorNotificationEmail } from "@/lib/error-email";
 import { createGHLContact, sendSMSNotification, verifyHcaptcha } from "@/lib/ghl";
 import { jobApplicationSchema } from "@/lib/validations";
 
@@ -33,7 +34,9 @@ export async function POST(req: NextRequest) {
       `💼 NEW JOB APPLICATION\nName: ${parsed.data.fullName}\nRole: ${parsed.data.role}\nPhone: ${parsed.data.phone}`,
     );
     return NextResponse.json({ success: true });
-  } catch {
+  } catch (err) {
+    console.error("Job application error:", err);
+    await sendErrorNotificationEmail("API submit-job-application", formatErrorHtml("submit-job-application", err));
     return NextResponse.json({ error: "Unexpected error" }, { status: 500 });
   }
 }

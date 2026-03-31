@@ -3,7 +3,7 @@ import Image from "next/image";
 const photos = [
   {
     src: "/images/gallery-sequoia-wreath-large.webp",
-    alt: "Large sequoia wreath display installation",
+    alt: "Large sequoia wreath display — professional holiday lighting",
   },
   {
     src: "/images/gallery-sequoia-lifestyle.webp",
@@ -11,11 +11,11 @@ const photos = [
   },
   {
     src: "/images/gallery-fence-wreath.webp",
-    alt: "LED wreath on fence line",
+    alt: "LED wreath on fence line — outdoor holiday lights installation",
   },
   {
     src: "/images/gallery-trunk-wrap.webp",
-    alt: "Warm white LED trunk wrap on landscape trees",
+    alt: "Warm white LED trunk wrap on landscape trees — outdoor christmas light installation",
   },
 ];
 
