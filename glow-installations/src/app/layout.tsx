@@ -85,6 +85,14 @@ gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`}
           </>
         )}
         <Header />
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          strategy="afterInteractive"
+          {...{
+            "data-resources-url": "https://widgets.leadconnectorhq.com/chat-widget/loader.js",
+            "data-widget-id": "69cc10c37061139c69e44ef3",
+          }}
+        />
         <ErrorReporter />
         <main className="flex-1">{children}</main>
         <Footer />
