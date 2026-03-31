@@ -17,8 +17,8 @@ export default function OpenRolesPage() {
       <SchemaMarkup pageType="jobs" title="Open Roles" path="/open-roles" />
       <section className="relative h-[50vh] min-h-[340px] overflow-hidden">
         <Image
-          src="/images/about-hero.webp"
-          alt="Join the Glow team"
+          src="/images/hero-home-christmas-lights.webp"
+          alt="Festive holiday lighting on a Central Coast home — join the Glow team"
           fill
           className="object-cover"
           priority
