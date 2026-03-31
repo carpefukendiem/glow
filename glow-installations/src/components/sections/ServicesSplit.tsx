@@ -36,7 +36,7 @@ export function ServicesSplit() {
                 : "Large sequoia wreath display — commercial christmas light installation"
             }
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
             quality={68}
             placeholder="blur"
             blurDataURL="data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoEAAMAAkA4JZQCdAEO/gHOAAD++P///////////////////////wAAAAA="

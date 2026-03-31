@@ -1,25 +1,34 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ServicesSplit } from "@/components/sections/ServicesSplit";
 import { ServiceAreaBanner } from "@/components/sections/ServiceAreaBanner";
 import { ServiceAreaIntro } from "@/components/sections/ServiceAreaIntro";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { buildMetadata } from "@/lib/seo";
-const FeaturesSection = dynamic(() =>
-  import("@/components/sections/FeaturesSection").then((m) => ({ default: m.FeaturesSection })),
+
+const ServicesSplit = dynamic(
+  () => import("@/components/sections/ServicesSplit").then((m) => ({ default: m.ServicesSplit })),
+  { ssr: true },
 );
-const PhotoStrip = dynamic(() =>
-  import("@/components/sections/PhotoStrip").then((m) => ({ default: m.PhotoStrip })),
+const FeaturesSection = dynamic(
+  () => import("@/components/sections/FeaturesSection").then((m) => ({ default: m.FeaturesSection })),
+  { ssr: true },
 );
-const TestimonialsCarousel = dynamic(() =>
-  import("@/components/sections/TestimonialsCarousel").then((m) => ({ default: m.TestimonialsCarousel })),
+const PhotoStrip = dynamic(
+  () => import("@/components/sections/PhotoStrip").then((m) => ({ default: m.PhotoStrip })),
+  { ssr: true },
 );
-const CommunitySection = dynamic(() =>
-  import("@/components/sections/CommunitySection").then((m) => ({ default: m.CommunitySection })),
+const TestimonialsCarousel = dynamic(
+  () => import("@/components/sections/TestimonialsCarousel").then((m) => ({ default: m.TestimonialsCarousel })),
+  { ssr: true },
 );
-const CtaBanner = dynamic(() =>
-  import("@/components/sections/CtaBanner").then((m) => ({ default: m.CtaBanner })),
+const CommunitySection = dynamic(
+  () => import("@/components/sections/CommunitySection").then((m) => ({ default: m.CommunitySection })),
+  { ssr: true },
+);
+const CtaBanner = dynamic(
+  () => import("@/components/sections/CtaBanner").then((m) => ({ default: m.CtaBanner })),
+  { ssr: true },
 );
 
 export const metadata = buildMetadata({
