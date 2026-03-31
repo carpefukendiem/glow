@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
 
 const services = [
   {
@@ -24,17 +21,11 @@ const services = [
 ];
 
 export function ServicesSplit() {
-  const reduced = useReducedMotion();
-
   return (
     <section className="flex min-h-[70vh] flex-col md:flex-row">
       {services.map((service, index) => (
-        <motion.div
+        <div
           key={service.title}
-          initial={reduced ? false : { opacity: 0, y: 36 }}
-          whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5, delay: index * 0.12 }}
           className="group relative flex min-h-[60vw] flex-1 items-end overflow-hidden transition-all duration-300 hover:-translate-y-0.5 md:max-h-[80vh]"
         >
           <Image
@@ -45,8 +36,8 @@ export function ServicesSplit() {
                 : "Large sequoia wreath display — commercial christmas light installation"
             }
             fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
-            quality={72}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={68}
             placeholder="blur"
             blurDataURL="data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoEAAMAAkA4JZQCdAEO/gHOAAD++P///////////////////////wAAAAA="
             className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
@@ -79,7 +70,7 @@ export function ServicesSplit() {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       ))}
     </section>
   );

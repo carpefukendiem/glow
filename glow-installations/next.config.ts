@@ -17,7 +17,8 @@ const nextConfig: NextConfig = {
   },
   images: {
     formats: ["image/webp"],
-    deviceSizes: [390, 640, 750, 828, 1080, 1200, 1920],
+    // Include widths between 390 and 640 so ~412px phones don’t jump to 750w assets (Lighthouse image audit).
+    deviceSizes: [390, 414, 480, 640, 750, 828, 1080, 1200, 1920],
     minimumCacheTTL: 31536000,
   },
   compress: true,

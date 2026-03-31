@@ -1,14 +1,11 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { ServicesSplit } from "@/components/sections/ServicesSplit";
 import { ServiceAreaBanner } from "@/components/sections/ServiceAreaBanner";
 import { ServiceAreaIntro } from "@/components/sections/ServiceAreaIntro";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { buildMetadata } from "@/lib/seo";
-
-const ServicesSplit = dynamic(() =>
-  import("@/components/sections/ServicesSplit").then((m) => ({ default: m.ServicesSplit })),
-);
 const FeaturesSection = dynamic(() =>
   import("@/components/sections/FeaturesSection").then((m) => ({ default: m.FeaturesSection })),
 );

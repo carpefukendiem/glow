@@ -147,3 +147,23 @@ h4 {
     animation: none;
   }
 }
+
+@keyframes hero-scroll-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-scroll-hint {
+  animation: hero-scroll-fade 0.5s ease 0.9s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-hint {
+    animation: none;
+    opacity: 1;
+  }
+}
