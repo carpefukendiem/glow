@@ -24,7 +24,7 @@ export function SchemaMarkup({
     url: SITE_URL,
     telephone: "+18057202559",
     email: "alex@glowinstallations.com",
-    logo: `${SITE_URL}/images/logo.png`,
+    logo: `${SITE_URL}/images/Glow_Installations_Logo.png`,
     priceRange: "$$",
     currenciesAccepted: "USD",
     paymentAccepted: "Credit Card, Check, Venmo, PayPal",
