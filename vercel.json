@@ -1,0 +1,5 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm install --prefix glow-installations",
+  "buildCommand": "npm run build --prefix glow-installations"
+}

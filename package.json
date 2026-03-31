@@ -1,0 +1,8 @@
+{
+  "name": "glow",
+  "private": true,
+  "scripts": {
+    "build": "npm run build --prefix glow-installations",
+    "vercel-build": "npm run build --prefix glow-installations"
+  }
+}
