@@ -33,8 +33,8 @@ export default function FaqPage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/60 to-transparent" />
-        <div className="relative z-10 mx-auto flex h-full max-w-[1280px] items-end px-6 pb-12 md:px-16">
-          <div>
+        <div className="relative z-10 mx-auto flex h-full max-w-[1280px] items-center justify-center px-6 pb-12 pt-16 text-center md:px-16 md:pt-0">
+          <div className="max-w-4xl">
             <span className="eyebrow">FAQ</span>
             <h1 className="font-display mt-4 text-5xl text-white md:text-6xl">
               Frequently Asked Questions About Our Services
@@ -65,7 +65,7 @@ export default function FaqPage() {
               <p>✓ Optional Upgraded Colors and Fixtures</p>
             </div>
           </article>
-          <article className="relative rounded-2xl border border-[var(--gold)]/40 bg-white/8 p-6 backdrop-blur-sm shadow-[var(--glow-gold)]">
+          <article className="relative rounded-2xl border border-[var(--gold)]/40 bg-white/8 p-6 text-center backdrop-blur-sm shadow-[var(--glow-gold)]">
             <span className="font-ui absolute right-4 top-4 rounded-full bg-[var(--gold)] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[var(--crimson)]">
               Most Popular
             </span>
@@ -83,7 +83,7 @@ export default function FaqPage() {
       </section>
 
       <section className="section-full bg-[var(--night)]">
-        <div className="container">
+        <div className="container mx-auto max-w-3xl">
           <FaqAccordion items={FAQS} />
 
           <div className="mt-10 border-t border-white/10 py-10 text-center">
@@ -110,7 +110,7 @@ export default function FaqPage() {
             </div>
           </div>
 
-          <section className="mt-12 rounded-2xl border border-white/10 bg-[#1a2820] p-8">
+          <section className="mx-auto mt-12 max-w-2xl rounded-2xl border border-white/10 bg-[#1a2820] p-8 text-center">
             <h2 className="font-display mb-6 text-2xl font-bold text-white">Have Another Question?</h2>
             <FaqQuestionForm />
           </section>

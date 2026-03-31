@@ -25,17 +25,24 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 rounded-2xl border bg-white p-6">
+    <form
+      onSubmit={form.handleSubmit(onSubmit)}
+      className="space-y-4 text-center [&_input]:text-left [&_textarea]:text-left"
+    >
       <input type="text" {...form.register("_gotcha")} className="hidden" tabIndex={-1} autoComplete="off" />
       <input placeholder="Name*" {...form.register("name")} className="w-full rounded-lg border p-3" />
       <input placeholder="Email*" {...form.register("email")} className="w-full rounded-lg border p-3" />
       <input placeholder="Phone*" {...form.register("phone")} className="w-full rounded-lg border p-3" />
       <textarea placeholder="Message*" {...form.register("message")} className="min-h-32 w-full rounded-lg border p-3" />
-      <HCaptcha
-        sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || "10000000-ffff-ffff-ffff-000000000001"}
-        onVerify={(token) => form.setValue("hcaptchaToken", token)}
-      />
-      <Button type="submit">Send Message</Button>
+      <div className="flex justify-center">
+        <HCaptcha
+          sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || "10000000-ffff-ffff-ffff-000000000001"}
+          onVerify={(token) => form.setValue("hcaptchaToken", token)}
+        />
+      </div>
+      <div className="flex justify-center pt-1">
+        <Button type="submit">Send Message</Button>
+      </div>
     </form>
   );
 }

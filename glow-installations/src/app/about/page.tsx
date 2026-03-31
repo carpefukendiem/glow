@@ -35,13 +35,13 @@ export default function AboutPage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/50 to-transparent" />
-        <div className="relative z-10 mx-auto flex h-full max-w-[1280px] items-end px-6 pb-14 md:px-16">
-          <div>
+        <div className="relative z-10 mx-auto flex h-full max-w-[1280px] items-center justify-center px-6 pb-14 pt-20 text-center md:px-16 md:pt-0">
+          <div className="max-w-3xl">
             <span className="eyebrow">About Glow</span>
             <h1 className="font-display mt-4 text-5xl text-white md:text-6xl">
               Meet the Team Behind the Glow
             </h1>
-            <p className="mt-4 max-w-2xl text-lg text-white/75">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/75">
               We combine craftsmanship, safety, and creative design to transform homes
               and businesses into unforgettable holiday experiences.
             </p>
@@ -89,7 +89,7 @@ export default function AboutPage() {
           ].map(([title, body]) => (
             <article
               key={title}
-              className="rounded-2xl border border-white/10 bg-white/5 p-5 transition-colors hover:border-[#E2CAA2]/30"
+              className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center transition-colors hover:border-[#E2CAA2]/30"
             >
               <h2 className="font-display text-2xl text-[var(--gold)]">{title}</h2>
               <p className="mt-2 text-sm text-white/75">{body}</p>
@@ -104,11 +104,11 @@ export default function AboutPage() {
 
       {/* Company story — cream */}
       <section className="section-full bg-[var(--surface-warm)]">
-        <div className="container max-w-4xl">
+        <div className="container mx-auto max-w-4xl text-center">
           <h2 className="font-display mb-6 text-3xl text-[var(--text-dark)] md:text-4xl">
             Central Coast Christmas Light Contractors With Heart
           </h2>
-          <div className="max-w-none space-y-5 text-lg text-[var(--text-dark-secondary)]">
+          <div className="mx-auto max-w-none space-y-5 text-lg text-[var(--text-dark-secondary)]">
             <p>
               Since our founding, we&apos;ve grown into one of the most recognized
               christmas lighting companies on the Central Coast, serving homeowners and
@@ -134,12 +134,12 @@ export default function AboutPage() {
       {/* Team — crimson */}
       <section className="section-full bg-[#8B060A]">
         <div className="container">
-          <h2 className="font-display text-4xl text-white">Team</h2>
+          <h2 className="font-display text-center text-4xl text-white">Team</h2>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
             {team.map(([name, role, photo]) => (
               <article
                 key={name}
-                className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-colors hover:border-[#E2CAA2]/30"
+                className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 text-center transition-colors hover:border-[#E2CAA2]/30"
               >
                 <div className="h-1 w-full bg-gradient-to-r from-[var(--crimson)] to-[var(--gold)]" />
                 <div className="p-5">

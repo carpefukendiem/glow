@@ -54,8 +54,8 @@ export default function GalleryPage() {
           quality={80}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/55 to-transparent" />
-        <div className="relative z-10 mx-auto flex h-full max-w-[1280px] items-end px-6 pb-12 md:px-16">
-          <div>
+        <div className="relative z-10 mx-auto flex h-full max-w-[1280px] items-center justify-center px-6 pb-12 pt-16 text-center md:px-16 md:pt-0">
+          <div className="max-w-3xl">
             <span className="eyebrow">Gallery</span>
             <h1 className="font-display mt-4 text-5xl text-white md:text-6xl">
               Our Installation Portfolio
@@ -83,7 +83,7 @@ export default function GalleryPage() {
                   blurDataURL="data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoEAAMAAkA4JZQCdAEO/gHOAAD++P///////////////////////wAAAAA="
                 />
               </div>
-              <p className="p-3 text-sm text-white/80">{image.alt}</p>
+              <p className="p-3 text-center text-sm text-white/80">{image.alt}</p>
             </article>
           ))}
         </div>

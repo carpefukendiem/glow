@@ -33,7 +33,7 @@ export function QuoteReviewsStack() {
       {quoteReviews.map((review) => (
         <div
           key={review.name}
-          className="flex gap-4 rounded-xl border border-white/10 bg-white/5 p-4"
+          className="flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4 text-center"
         >
           <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
             <Image
@@ -44,8 +44,8 @@ export function QuoteReviewsStack() {
               sizes="64px"
             />
           </div>
-          <div className="min-w-0 flex-1">
-            <div className="mb-1 flex gap-0.5">
+          <div className="min-w-0 max-w-md">
+            <div className="mb-1 flex justify-center gap-0.5">
               {Array.from({ length: review.stars }).map((_, i) => (
                 <span key={i} className="text-sm text-[var(--gold)]">
                   ★

@@ -47,17 +47,19 @@ export function HeroSection() {
         ))}
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-16 pt-24 md:px-16">
-        <div className="max-w-3xl">
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-16 pt-24 text-center md:px-16">
+        <div className="mx-auto max-w-3xl">
           <motion.div
             initial={reduced ? false : { opacity: 0, y: 20 }}
             animate={reduced ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-4 py-2 backdrop-blur-sm"
+            className="mb-8 flex justify-center"
           >
-            <span className="text-[var(--gold)]">★★★★★</span>
-            <span className="text-sm font-medium text-white">
-              5-Star Rated · Licensed &amp; Insured · Central Coast&apos;s #1 Installer
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-4 py-2 backdrop-blur-sm">
+              <span className="text-[var(--gold)]">★★★★★</span>
+              <span className="text-sm font-medium text-white">
+                5-Star Rated · Licensed &amp; Insured · Central Coast&apos;s #1 Installer
+              </span>
             </span>
           </motion.div>
 
@@ -78,7 +80,7 @@ export function HeroSection() {
             initial={reduced ? false : { opacity: 0, y: 20 }}
             animate={reduced ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-10 mt-6 max-w-2xl text-xl font-light text-white/80 md:text-2xl"
+            className="mx-auto mb-10 mt-6 max-w-2xl text-xl font-light text-white/80 md:text-2xl"
           >
             The Central Coast&apos;s trusted christmas lighting company serving residential and commercial properties
             from Paso Robles to Ventura. Professional christmas light installation, design, and full-service care —
@@ -89,7 +91,7 @@ export function HeroSection() {
             initial={reduced ? false : { opacity: 0, y: 20 }}
             animate={reduced ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-12 flex flex-col gap-4 sm:flex-row"
+            className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <Link
               href="/quote"
@@ -109,7 +111,7 @@ export function HeroSection() {
             initial={reduced ? false : { opacity: 0 }}
             animate={reduced ? undefined : { opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.52, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white"
+            className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white"
           >
             {[
               "Free Design Consultation",

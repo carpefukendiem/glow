@@ -69,8 +69,8 @@ export default async function PostPage({ params }: Params) {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/60 to-transparent" />
-        <div className="relative z-10 mx-auto flex h-full max-w-[980px] items-end px-6 pb-12">
-          <div>
+        <div className="relative z-10 mx-auto flex h-full max-w-[980px] items-center justify-center px-6 pb-12 pt-16 text-center md:pt-0">
+          <div className="max-w-4xl">
             <p className="font-ui text-xs uppercase tracking-[0.2em] text-[var(--gold)]">
               {post.category} · {post.publishedYear} · {post.author}
             </p>
@@ -80,7 +80,7 @@ export default async function PostPage({ params }: Params) {
       </section>
 
       <section className="section-full bg-[var(--deep-navy)]">
-        <div className="container max-w-[980px]">
+        <div className="container mx-auto max-w-[980px] text-center">
           <p className="text-xl leading-relaxed text-white/80">{article.intro}</p>
         </div>
       </section>

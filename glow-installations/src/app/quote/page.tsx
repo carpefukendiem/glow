@@ -46,10 +46,10 @@ export default function QuotePage() {
             <QuoteForm />
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 text-center">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <h2 className="font-display text-2xl font-bold text-white">What&apos;s Included</h2>
-              <ul className="mt-4 space-y-2 text-sm text-white/75">
+              <ul className="mx-auto mt-4 max-w-md space-y-2 text-sm text-white/75">
                 {included.map((item) => (
                   <li key={item}>
                     <span className="text-[var(--gold)]">✓</span> {item}
