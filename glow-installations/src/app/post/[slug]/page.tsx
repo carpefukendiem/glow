@@ -61,7 +61,7 @@ export default async function PostPage({ params }: Params) {
       />
       <section className="relative h-[52vh] min-h-[360px] overflow-hidden">
         <Image
-          src="/images/faq-hero.webp"
+          src="/images/holidtay-light-istallation-experts.webp"
           alt="Professional exterior christmas lights — Central Coast holiday lighting blog"
           fill
           className="object-cover"

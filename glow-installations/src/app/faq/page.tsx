@@ -25,7 +25,7 @@ export default function FaqPage() {
       <SchemaMarkup pageType="faq" title="FAQ" path="/faq" />
       <section className="relative h-[52vh] min-h-[360px] overflow-hidden">
         <Image
-          src="/images/faq-hero.webp"
+          src="/images/holidtay-light-istallation-experts.webp"
           alt="Professional exterior christmas lights on a Central Coast home — FAQ"
           fill
           className="object-cover object-center"

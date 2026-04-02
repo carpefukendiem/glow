@@ -17,7 +17,7 @@ export default function BlogPage() {
       <SchemaMarkup pageType="blog" title="Blog" path="/blog" />
       <section className="relative h-[52vh] min-h-[360px] overflow-hidden">
         <Image
-          src="/images/faq-hero.webp"
+          src="/images/holidtay-light-istallation-experts.webp"
           alt="Holiday lighting blog and inspiration"
           fill
           className="object-cover"
